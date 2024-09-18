@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+
+html{
+  justify-content: center;
+  align-items: center;
+}
+
+.MainTitle {
+  color: #000000;
+}
+
+.BaybayinTitle {
+  margin-top: -30px;
+  color: #000000;
+}
+
+
+.MainContDes {
+background-color: #ffffff;
+padding-top: 5%;
+display: flex;
+justify-content: space-evenly;
+padding-bottom: 5%;
+border-bottom: 5px solid #000000;
+
+}
+
+.DesMain {
+  align-items: center;
+  display: flex;
+}
+
+.ColorCont {
+  display: flex;
+  height: 400px;
+  width: 500px;
+  background-color: #d41343;
+  box-shadow: 10px 10px #000000;
+  border: 5px solid #000000;
+  border-radius: 30px;
+}
+
+.InfoTxt{
+  padding:50px;
+  padding-top:70px;
+  padding-bottom:70px;
+  color: #fffef9;
+}
+
+.ImgInfo {
+  margin-top: -5px;
+  margin-right: -4px;
+  border: 5px solid #000000;
+  border-radius: 30px;
+  height: 400px;
+  width: 200px;
+  object-fit: cover;
+}
+
+#cont1 {
+background-color: #07aedb;
+margin-right: -400px;
+}
