@@ -55,6 +55,11 @@ const Reservation = () => {
             <option value={2}>2 People</option>
             <option value={3}>3 People</option>
             <option value={4}>4 People</option>
+            <option value={5}>5 People</option>
+            <option value={6}>6 People</option>
+            <option value={7}>7 People</option>
+            <option value={8}>8 People</option>
+            <option value="8+">8+ People</option> {/* Added "8+ People" */}
           </select>
         </div>
         <div className="form-group">
