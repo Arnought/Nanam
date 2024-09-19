@@ -36,15 +36,23 @@ export default function Home(){
             </div>
 
             <div>
-            <div id="MenuMainCont"class="MainContDes">
-                <div class="DesMain">
-
-                    <div class="MenuCont">
-                    
+                <div id="MenuMainCont"class="MainContDes">
+                    <div class="DesMain">
+                        <div class="MenuCont">
+                        
+                        </div>
                     </div>
                 </div>
             </div>
-            
+
+            <div>
+                <div id="MenuMainCont"class="MainContDes">
+                    <div class="DesMain">
+                        <div class="MenuCont">
+                        
+                        </div>
+                    </div>
+                </div>
             </div>
 
         
