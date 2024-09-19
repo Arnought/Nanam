@@ -27,6 +27,27 @@ export default function Home(){
                     </div>
                 </div>
             </div>
+
+            <div class="MenuTitle">
+                    <div>
+                    <h1 class="MainTitle">Menu</h1>
+                    <h1 class="BaybayinTitle">Baybayin*</h1>
+                    </div>
+            </div>
+
+            <div>
+            <div id="MenuMainCont"class="MainContDes">
+                <div class="DesMain">
+
+                    <div class="MenuCont">
+                    
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+
+        
         </div>
     );
 }

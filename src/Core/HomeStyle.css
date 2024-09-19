@@ -57,6 +57,28 @@ border-bottom: 5px solid #000000;
   object-fit: cover;
 }
 
+.MenuTitle {
+ display: flex;
+ justify-content: center;
+}
+
+#MenuMainCont {
+  
+  background-color: #ffffff00;
+}
+
+.MenuCont {
+  display: flex;
+  height: 1000px;
+  width: 700px;
+  background-color: #ffffff;
+  box-shadow: 10px 10px #000000;
+  border: 5px solid #000000;
+  border-radius: 30px;
+
+}
+
+
 #cont1 {
 background-color: #07aedb;
 margin-right: -400px;
