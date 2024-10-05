@@ -1,4 +1,4 @@
-nav{
+nav {
     display: flex;
     background-color: black;
     justify-content: center;
@@ -7,16 +7,17 @@ nav{
     position: sticky;
     top: 0;
     z-index: 1000;
+    position: relative;
 }
 
-ul{
+ul {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.link{
+.link {
     float: left;
     text-decoration: none;
     border-radius: 3px;
@@ -24,11 +25,23 @@ ul{
     padding: 5px;
 }
 
-.link:hover{
+.link:hover {
     background-color: #d41343;
 }
 
-li{
+li {
     list-style-type: none;
     margin: 0 20px;
+}
+
+.login {
+    float: left;
+    text-decoration: none;
+    border-radius: 3px;
+    color: white;
+    padding: 5px;
+}
+
+.login:hover {
+    background-color: #383838;
 }

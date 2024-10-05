@@ -4,6 +4,7 @@ import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Core/Home.js';
 import Reservation from './SBOX/SBOX_Magat/SBOX_Reservation.js';
 import About from './SBOX/SBOX_Isidro/About.js';
+import Login from './SBOX/SBOX_Magat/Login.js';
 
 
 function App() {
