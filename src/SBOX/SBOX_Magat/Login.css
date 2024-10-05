@@ -70,3 +70,18 @@
     margin-top: 10px;
   }
   
+  .register-link {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .register-text {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .register-text:hover {
+    color: #0056b3;
+  }
+  

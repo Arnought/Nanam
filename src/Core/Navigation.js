@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './navigation.css';
 import { Outlet, Link } from 'react-router-dom';
 import Login from '../SBOX/SBOX_Magat/Login.js';
-import Register from '../SBOX/SBOX_Magat/Register.js';  // Import the Register component
+import Register from '../SBOX/SBOX_Magat/Register.js';
 
 const Navigation = () => {
     const [showLogin, setShowLogin] = useState(false);
@@ -28,8 +28,8 @@ const Navigation = () => {
             </ul>
         </nav>
         
-        {/* Render the Login and Register modals */}
-        <Login showModal={showLogin} handleClose={closeLoginModal} />
+        {/* Pass the openRegisterModal to the Login component */}
+        <Login showModal={showLogin} handleClose={closeLoginModal} openRegisterModal={openRegisterModal} />
         <Register showModal={showRegister} handleClose={closeRegisterModal} />
 
         <Outlet />
