@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Login.css'; // Assuming you already have Login specific styles
+import './Login.css'; 
 
 const Login = ({ showModal, handleClose, openRegisterModal }) => {
   const [email, setEmail] = useState('');
@@ -17,7 +17,7 @@ const Login = ({ showModal, handleClose, openRegisterModal }) => {
     // Mock login functionality
     alert('Login successful!');
     setErrorMessage('');
-    handleClose();  // Close the modal on success
+    handleClose();  
   };
 
   if (!showModal) return null;
@@ -57,10 +57,17 @@ const Login = ({ showModal, handleClose, openRegisterModal }) => {
           <button type="submit">Login</button>
         </form>
 
-        {/* Add Register link below the form */}
         <p className="register-link">
           Don't have an account?{' '}
-          <span onClick={openRegisterModal} className="register-text">Register</span>
+          <span 
+            onClick={() => {
+              handleClose();
+              openRegisterModal();
+            }} 
+            className="register-text"
+          >
+            Register
+          </span>
         </p>
       </div>
     </div>

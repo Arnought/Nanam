@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './Register.css';  // Register specific styles
+import './Register.css';
 
-const Register = ({ showModal, handleClose }) => {
+const Register = ({ showModal, handleClose, openLoginModal }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -23,11 +23,10 @@ const Register = ({ showModal, handleClose }) => {
 
     // Mock registration functionality
     alert('Registration successful!');
-    setErrorMessage('');  // Clear error message
-    handleClose();        // Close the modal on success
+    setErrorMessage('');
+    handleClose();  
   };
 
-  // Show the modal only if `showModal` is true
   if (!showModal) return null;
 
   return (
@@ -88,6 +87,20 @@ const Register = ({ showModal, handleClose }) => {
 
           <button type="submit">Register</button>
         </form>
+
+        {/* Sign-in link */}
+        <p className="signin-link">
+          Already have an account?{' '}
+          <span 
+            onClick={() => {
+              handleClose();
+              openLoginModal();
+            }} 
+            className="signin-text"
+          >
+            Sign-in
+          </span>
+        </p>
       </div>
     </div>
   );

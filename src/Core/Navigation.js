@@ -8,33 +8,46 @@ const Navigation = () => {
     const [showLogin, setShowLogin] = useState(false);
     const [showRegister, setShowRegister] = useState(false);
 
-    const openLoginModal = () => setShowLogin(true);
+    const openLoginModal = () => {
+        setShowLogin(true);
+        setShowRegister(false);
+    };
+    
     const closeLoginModal = () => setShowLogin(false);
 
-    const openRegisterModal = () => setShowRegister(true);
+    const openRegisterModal = () => {
+        setShowRegister(true);
+        setShowLogin(false);
+    };
+    
     const closeRegisterModal = () => setShowRegister(false);
-
     return (
     <>
         <nav>
-            <ul>
+            <ul className="center-links">
                 <li><Link to="/" className="link">Home</Link></li>
                 <li><Link to="/reservation" className="link">Reservation</Link></li>
                 <li><Link to="/about" className="link">About Us</Link></li>
-                <li>
-                    <button onClick={openLoginModal} className="login">Login</button>
-                    <button onClick={openRegisterModal} className="register">Register</button>
-                </li>
             </ul>
-        </nav>
-        
-        {/* Pass the openRegisterModal to the Login component */}
-        <Login showModal={showLogin} handleClose={closeLoginModal} openRegisterModal={openRegisterModal} />
-        <Register showModal={showRegister} handleClose={closeRegisterModal} />
 
+            <div className="login-container">
+                <button onClick={openLoginModal} className="login">Login</button>
+            </div>
+        </nav>
+
+        <Login 
+            showModal={showLogin} 
+            handleClose={closeLoginModal} 
+            openRegisterModal={openRegisterModal} 
+        />
+        <Register 
+            showModal={showRegister} 
+            handleClose={closeRegisterModal} 
+            openLoginModal={openLoginModal} 
+        />
         <Outlet />
     </>
     );
-}
+};
 
 export default Navigation;
