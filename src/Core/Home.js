@@ -8,14 +8,15 @@ export default function Home(){
             <Navigation />
 
 
+
             <div class="MainContDes">
                 <div class="DesMain">
                     <div>
                     <h1 class="MainTitle">NANAM</h1>
-                    <h1 class="BaybayinTitle">Baybayin*</h1>
+                    <h1 class="BaybayinTitle">NANAM</h1>
                     </div>
-
                 </div>
+
 
                 <div class="DesMain">
                     <div id="cont1" class="ColorCont">
@@ -28,34 +29,51 @@ export default function Home(){
                 </div>
             </div>
 
-            <div class="MenuTitle">
-                    <div>
-                    <h1 class="MainTitle">Menu</h1>
-                    <h1 class="BaybayinTitle">Baybayin*</h1>
-                    </div>
-            </div>
-
-            <div>
-                <div id="MenuMainCont"class="MainContDes">
-                    <div class="DesMain">
-                        <div class="MenuCont">
-                        
+            <div class="MenuBGCont">
+                
+                    <div class="MenuCenter">
+                        <div class="MenuTitle">
+                            <div>
+                            <h1 class="MainTitle">Menu</h1>
+                            <h1 class="BaybayinTitle">Pagpipilian</h1>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
 
-            <div>
-                <div id="MenuMainCont"class="MainContDes">
-                    <div class="DesMain">
-                        <div class="MenuCont">
-                        
+                            <div class="DesMain">
+                                <div class="MenuCont">
+                                    <div class="MenuContCard">
+                                        <img src="/Assets/image.png" alt="food" class="ImgMenu"></img>
+                                        <div class="MenuTxt"><h2 class="MainTitle">ITEM 1</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p></div>
+                                    </div>
+
+                                    <div class="MenuContCard">
+                                        <div class="MenuTxt"><h2 class="MainTitle">ITEM 2</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p></div>
+                                        <img src="/Assets/image.png" alt="food" class="ImgMenu" id="ImgMenuRight"></img>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="DesMain">
+                                <div class="MenuCont">
+                                    <div class="MenuContCard">
+                                        <img src="/Assets/image.png" alt="food" class="ImgMenu"></img>
+                                        <div class="MenuTxt"><h2 class="MainTitle">ITEM 1</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p></div>
+                                    </div>
+
+                                    <div class="MenuContCard">
+                                        <div class="MenuTxt"><h2 class="MainTitle">ITEM 2</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p></div>
+                                        <img src="/Assets/image.png" alt="food" class="ImgMenu" id="ImgMenuRight"></img>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
-                    </div>
-                </div>
-            </div>
 
-        
+
+
+
+
+                    </div>
         </div>
     );
 }
