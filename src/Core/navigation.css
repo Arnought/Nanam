@@ -47,4 +47,5 @@ nav {
 
 .link:hover {
     background-color: #d41343;
+    border-radius: 5px;
 }
