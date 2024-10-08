@@ -1,7 +1,7 @@
 @font-face {
     font-family: "Cubao";
     src: local("Cubao"),
-    url("/src/TypeFace/Cubao/Cubao_Free_Regular.otf");
+    url("/src/TypeFace/Cubao_Free_Regular.otf");
     font-weight: bold;
     /* Will download once I have internet */
   }
@@ -13,8 +13,10 @@ html{
 }
 
 h1{
-    color: rgb(255, 255, 255);
+    color: #D41343;
     text-align: center;
+    font-size: 60px;
+    font-family: 'Cubao';
 }
 
 .main{

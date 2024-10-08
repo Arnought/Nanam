@@ -10,7 +10,7 @@ const About = () => {
             <Navigation />
             
             <div id="main">
-                <h1>ABOUT US</h1>
+                <h1 class="heading">ABOUT US</h1>
 
                 <div id="info" class="main-div">
                     <div id="img-container">
