@@ -39,7 +39,6 @@ const Navigation = () => {
         <nav>
             <ul className="center-links">
                 <li><Link to="/" className="link">Home</Link></li>
-                {/* <li><button onClick={openReservationModal} className="link">Reservation</button></li> */}
                 <li><Link onClick={openReservationModal} className='link'>Reservation</Link></li>
                 <li><Link to="/about" className="link">About Us</Link></li>
             </ul>
