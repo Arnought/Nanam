@@ -1,3 +1,11 @@
+@font-face {
+    font-family: "Cubao";
+    src: local("Cubao"),
+    url("/src/TypeFace/Cubao_Free_Regular.otf");
+    font-weight: bold;
+    /* Will download once I have internet */
+  }
+
 html{
     background-color: #f9c91a;
     justify-content: center;
@@ -5,36 +13,47 @@ html{
 }
 
 h1{
-    color: rgb(255, 255, 255);
+    color: #D41343;
     text-align: center;
+    font-size: 60px;
+    font-family: 'Cubao';
+}
+
+.main{
+    align-items: center;
 }
 
 .main-div{
     height: auto;
-    margin: 0px 300px;
+    max-width: 1000px;
+    margin: auto;
     align-items: center;
     overflow: hidden;
     border: 5px solid #000000;
-    border-radius: 10px;
+    border-right: 20px solid black;
+    border-bottom: 20px solid black;
+    border-radius: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #info{
     display: flex;
     background-color: #fff;
-    padding: 0px 20px 0px 0px;
 }
 
-#image-container{
+#img-container{
+    height: 100%;
+    width: 100%;
     overflow: hidden;
     display: flex;
-    height: 100%;
+    border: 5px solid black;
+    border-radius: 5px;
+    margin: -5px;
 }
 
 .food{
     width: 400px;
     height: auto;
-    border-radius: 5px;
 }
 
 #description p{
@@ -58,6 +77,7 @@ h1{
     gap: 30px;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 #profile{
@@ -66,7 +86,7 @@ h1{
     text-align: center;
     background-color: white;
     border: 4px solid #000000;
-    border-radius: 5px;
+    border-radius: 20px;
     margin-bottom: 30px;
 }
 
@@ -75,6 +95,7 @@ h1{
 #pfp{
     width: 200px;
     height: auto;
-    border-bottom: 4px solid #000000;
-    border-radius: 5px;
+    border: 4px solid #000000;
+    border-radius: 20px;
+    margin: -5px;
 }
