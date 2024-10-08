@@ -3,7 +3,6 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { FaRegCalendarAlt } from 'react-icons/fa';
 import './Reservation.css';
-import Navigation from '../../Core/Navigation.js';
 
 // Helper function to generate time options
 const generateTimeOptions = () => {
@@ -26,7 +25,7 @@ const generateTimeOptions = () => {
   return times;
 };
 
-const Reservation = () => {
+const Reservation = ({ showModal, handleClose }) => {
   const [date, setDate] = useState(new Date());
   const [people, setPeople] = useState(1);
   const [time, setTime] = useState('9:00 AM');
@@ -37,19 +36,21 @@ const Reservation = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log({ people, date, time, email, name, agreed });
-    // Add form submission logic here
   };
 
   const timeOptions = generateTimeOptions(); // Get the generated time options
-  
+
+  if (!showModal) {
+    return null;
+  }
+
   return (
-    <div>
-      <Navigation/>
+    <div className="reservation-modal">
+      <div className="reservation-overlay" onClick={handleClose}></div>
       <div className="reservation-container">
-      
         <header className="header">
-          <div className="logo">Site name</div>
           <div className="reservation-title">Reservation</div>
+          <span className="close" onClick={handleClose}>&times;</span>
         </header>
         <form className="reservation-form" onSubmit={handleSubmit}>
           <div className="form-group">
@@ -63,7 +64,7 @@ const Reservation = () => {
               <option value={6}>6 People</option>
               <option value={7}>7 People</option>
               <option value={8}>8 People</option>
-              <option value="8+">8+ People</option> {/* Added "8+ People" */}
+              <option value="8+">8+ People</option>
             </select>
           </div>
           <div className="form-group">
@@ -106,15 +107,17 @@ const Reservation = () => {
               required
             />
           </div>
-          <div className="form-group terms">
-            <input
+          
+          <p className="terms">Agree to terms
+            
+              <input
               type="checkbox"
               checked={agreed}
               onChange={(e) => setAgreed(e.target.checked)}
               required
-            />
-            <label>Agree to terms</label>
-          </div>
+              />
+          </p>
+          
           <button type="submit" className="submit-button">Confirm</button>
         </form>
       </div>
