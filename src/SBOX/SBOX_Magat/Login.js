@@ -1,30 +1,25 @@
 import React, { useState } from 'react';
-import './Login.css';
+import './Login.css'; 
 
-const Login = ({ showModal, handleClose }) => {
+const Login = ({ showModal, handleClose, openRegisterModal }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     if (!email || !password) {
       setErrorMessage('Please fill out all fields');
       return;
     }
 
     // Mock login functionality
-    if (email === 'test@example.com' && password === 'password123') {
-      alert('Login successful!');
-      setErrorMessage('');
-      handleClose();
-    } else {
-      setErrorMessage('Invalid email or password');
-    }
+    alert('Login successful!');
+    setErrorMessage('');
+    handleClose();  
   };
 
-  // Show the modal only if `showModal` is true
   if (!showModal) return null;
 
   return (
@@ -61,6 +56,19 @@ const Login = ({ showModal, handleClose }) => {
 
           <button type="submit">Login</button>
         </form>
+
+        <p className="register-link">
+          Don't have an account?{' '}
+          <span 
+            onClick={() => {
+              handleClose();
+              openRegisterModal();
+            }} 
+            className="register-text"
+          >
+            Register
+          </span>
+        </p>
       </div>
     </div>
   );
