@@ -1,3 +1,11 @@
+@font-face {
+    font-family: "Cubao";
+    src: local("Cubao"),
+    url("/src/TypeFace/Cubao/Cubao_Free_Regular.otf");
+    font-weight: bold;
+    /* Will download once I have internet */
+  }
+
 html{
     background-color: #F9C91B;
     justify-content: center;
