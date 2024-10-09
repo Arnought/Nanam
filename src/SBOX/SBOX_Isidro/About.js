@@ -10,12 +10,13 @@ const About = () => {
             <Navigation />
             
             <div id="main">
-                <h1>ABOUT US</h1>
+                <h1 class="heading">ABOUT US</h1>
 
                 <div id="info" class="main-div">
                     <div id="img-container">
                     <img src="/Assets/image.png" alt='Food' className="food"></img>
                     </div>
+                    
                     <div id="description">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
