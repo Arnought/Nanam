@@ -1,4 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+@font-face {
+  font-family: "Cubao";
+  src: local("Cubao"),
+  url("/src/TypeFace/Cubao/Cubao_Free_Regular.otf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Matatas One";
+  src: local("Matatas One"),
+  url("/src/TypeFace/Matatas One/Matatas\ One\ Bold\ 700.otf");
+  font-weight: bold;
+}
 
 html{
   justify-content: center;
@@ -6,11 +18,15 @@ html{
 }
 
 .MainTitle {
+  font-size: 50px;
+  font-family: "Cubao";
   color: #000000;
 }
 
 .BaybayinTitle {
-  margin-top: -30px;
+  font-size: 50px;
+  font-family: "Matatas One";
+  margin-top: -50px;
   color: #000000;
 }
 
@@ -57,18 +73,26 @@ border-bottom: 5px solid #000000;
   object-fit: cover;
 }
 
+.MenuBGCont{
+  background-image: linear-gradient(180deg, #f9c91a ,#ffae00);
+}
+
+.MenuCenter {
+  gap:50px;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .MenuTitle {
  display: flex;
  justify-content: center;
 }
 
-#MenuMainCont {
-  
-  background-color: #ffffff00;
-  border-bottom: 0px;
-}
-
 .MenuCont {
+  justify-content: space-around;
+  flex-direction: column;
   display: flex;
   height: 1000px;
   width: 700px;
@@ -76,9 +100,39 @@ border-bottom: 5px solid #000000;
   box-shadow: 10px 10px #000000;
   border: 5px solid #000000;
   border-radius: 30px;
-
 }
 
+.MenuContCard {
+  align-items: center ;
+  display: flex;
+  height: 400px;
+  width: 700px;
+  border-radius: 30px;
+}
+
+.ImgMenu {
+  background-color: #ffffff;
+  box-shadow: 10px 10px #000000;
+  border: 5px solid #000000;
+  margin-left: -150px;
+  border-radius: 20px;
+  height: 200px;
+  width: 400px;
+  object-fit: cover;
+}
+
+#ImgMenuRight {
+  margin-left: 0px;
+  margin-right: -150px;
+}
+
+.MenuTxt {
+  padding:50px;
+  padding-top:70px;
+  padding-bottom:70px;
+  color: #000000;
+  
+}
 
 #cont1 {
 background-color: #07aedb;
