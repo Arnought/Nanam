@@ -1,62 +1,67 @@
 import React, { useState } from 'react';
-import './Login.css'; 
+import "./Login.css"
 
 const Login = ({ showModal, handleClose, openRegisterModal }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [error, setError] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!email || !password) {
-      setErrorMessage('Please fill out all fields');
-      return;
-    }
-
-    // Mock login functionality
-    alert('Login successful!');
-    setErrorMessage('');
-    handleClose();  
+    fetch('http://localhost:5000/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.message === 'Login successful') {
+          alert('Login successful!');
+          handleClose();
+        } else {
+          setError('Invalid email or password.');
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        setError('An error occurred. Please try again.');
+      });
   };
 
-  if (!showModal) return null;
+  if (!showModal) {
+    return null;
+  }
 
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <span className="close" onClick={handleClose}>&times;</span>
+        <button onClick={handleClose} className="close">&times;</button>
         <h2>Login</h2>
+        {error && <p className="error-message">{error}</p>}
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="email">Email:</label>
+            <label>Email:</label>
             <input
               type="email"
-              id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
               required
             />
           </div>
-
           <div className="form-group">
-            <label htmlFor="password">Password:</label>
+            <label>Password:</label>
             <input
               type="password"
-              id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter your password"
               required
             />
           </div>
-
-          {errorMessage && <p className="error-message">{errorMessage}</p>}
-
-          <button type="submit">Login</button>
+          <button type="submit" className="login-btn">Login</button>
         </form>
-
         <p className="register-link">
           Don't have an account?{' '}
           <span 
