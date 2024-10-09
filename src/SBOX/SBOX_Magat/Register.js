@@ -21,10 +21,27 @@ const Register = ({ showModal, handleClose, openLoginModal }) => {
       return;
     }
 
-    // Mock registration functionality
-    alert('Registration successful!');
-    setErrorMessage('');
-    handleClose();  
+    fetch('http://localhost:5000/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, email, password }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.message === 'Registration successful') {
+          alert('Registration successful!');
+          handleClose();
+          openLoginModal();
+        } else {
+          setErrorMessage(data.message);
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        setErrorMessage('An error occurred. Please try again.');
+      });
   };
 
   if (!showModal) return null;
@@ -88,7 +105,6 @@ const Register = ({ showModal, handleClose, openLoginModal }) => {
           <button type="submit">Register</button>
         </form>
 
-        {/* Sign-in link */}
         <p className="signin-link">
           Already have an account?{' '}
           <span 
