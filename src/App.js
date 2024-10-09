@@ -12,6 +12,7 @@ function App() {
   document.title = "Home";
   return (
     <div className="App">
+      <div className='main'>
       <Router>
         <Routes>
           <Route path='/' element={<Home />}/>
@@ -19,7 +20,9 @@ function App() {
           <Route path='/about' element={<About />}/>
         </Routes>
       </Router>
+      <br /><br />
       <Footer />
+      </div>
     </div>
   );
 }

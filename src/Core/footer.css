@@ -1,6 +1,18 @@
+@font-face {
+    font-family: "Cubao";
+    src: local("Cubao"),
+    url("/src/TypeFace/Cubao/Cubao_Free_Regular.otf");
+    font-weight: bold;
+  }
 
 footer{
     background-color: black;
     color: white;
     display: flex;
+    padding: 0px 100px;
+}
+
+h1{
+    font-size: 60px;
+    font-family: 'Cubao';
 }
