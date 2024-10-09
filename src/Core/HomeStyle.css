@@ -12,16 +12,104 @@
   font-weight: bold;
 }
 
+@font-face {
+  font-family: "Lexend";
+  src: local("Lexend"),
+  url("/src/TypeFace/Lexend/static/Lexend-Medium.ttf");
+  font-weight: normal;
+}
+
 html{
   justify-content: center;
   align-items: center;
 }
 
-.MainTitle {
+/* SHAPES */
+
+
+.Stamp {
+  transform: rotate(100deg);
+  width: 300px;
+  height: 300px;
+  margin-top: -10%;
+  margin-left: -5%;
+
+}
+
+.LessPointElem {
+  width: 190px;
+  height: 190px;
+  align-self: center;
+  margin-top: -100px;
+  margin-left: -87px;
+}
+
+.Star4Elem {
+  align-self: baseline;
+  margin-left: -96px;
+  margin-top: -96px;
+  width: 190px;
+  height: 190px;
+}
+
+.Diamond{
+  position: relative;
+  align-self: baseline;
+  margin-right: -96px;
+  margin-top: -96px;
+  width: 220px;
+  height: 220px;
+}
+
+.MorePoint {
+  transform: rotate(100deg);
+  align-self: baseline;
+  margin-top: -160%;
+  margin-left: -150%;
+  width: 400px;
+  height: 400px;
+}
+
+.Star{
+  width: 400px;
+  height: 400px;
+  transform: rotate(100deg);
+  align-self: center;
+  margin-left: -300%;
+  margin-top: -100%;
+}
+
+.FatStar{
+  transform: rotate(100deg);
+  align-self: baseline;
+  width: 400px;
+  height: 400px;
+}
+
+.Circle {
+  width: 300px;
+  height: 300px;
+  margin-left: 0;
+  transform: rotate(100deg);
+  }
+  
+/* INTRO */
+.Title {
   font-size: 50px;
   font-family: "Cubao";
   color: #000000;
 }
+
+#MainTitle{
+  color: #d41343;
+  font-size: 100px;
+}
+
+#MainTitleBayBay{
+  margin-top: -100px;
+  font-size: 100px;
+}
+
 
 .BaybayinTitle {
   font-size: 50px;
@@ -30,21 +118,24 @@ html{
   color: #000000;
 }
 
+.MainCont{
+
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding-top: 5%;
+  border-bottom: 5px solid #000000;
+  padding-bottom: 5%;
+
+}
 
 .MainContDes {
-background-color: #ffffff;
-padding-top: 5%;
-display: flex;
-justify-content: space-evenly;
-padding-bottom: 5%;
-border-bottom: 5px solid #000000;
-
-}
-
-.DesMain {
-  align-items: center;
+  margin-top: -70px;
   display: flex;
+  justify-content: space-evenly;
+
 }
+
 
 .ColorCont {
   display: flex;
@@ -73,7 +164,23 @@ border-bottom: 5px solid #000000;
   object-fit: cover;
 }
 
-.MenuBGCont{
+
+/* MENU */
+#MenuTitle {
+  font-size: 100px;
+}
+
+#BaybayinTitleMenu { 
+  margin-top: -90px;
+  margin-bottom: 100px;
+}
+
+.MenuBGCont{ 
+  position: relative;
+  z-index: -1;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
   background-image: linear-gradient(180deg, #f9c91a ,#ffae00);
 }
 
@@ -85,8 +192,28 @@ border-bottom: 5px solid #000000;
   align-items: center;
 }
 
+.DesMain {
+  align-items: center;
+  display: flex;
+}
+
+#TopMenu1 {
+  margin-right: -85px;
+}
+
+#TopMenu2 {
+  margin-left: -131px;
+}
+
+/* +++++FIX FLEX DIRECTION + THE SHAPES POSITION HIERARCHY+++++ */
+.ShapeSideMenu {
+  display: flex;
+  width: 100px;
+}
+
 .MenuTitle {
  display: flex;
+ flex-direction: column;
  justify-content: center;
 }
 
@@ -112,16 +239,19 @@ border-bottom: 5px solid #000000;
 
 .ImgMenu {
   background-color: #ffffff;
-  box-shadow: 10px 10px #000000;
+  box-shadow: 10px 10px #d41343;
   border: 5px solid #000000;
   margin-left: -150px;
   border-radius: 20px;
   height: 200px;
   width: 400px;
+  transform: rotate(-10deg);
   object-fit: cover;
 }
 
 #ImgMenuRight {
+  box-shadow: 10px 10px #823eff;
+  transform: rotate(10deg);
   margin-left: 0px;
   margin-right: -150px;
 }
