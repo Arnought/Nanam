@@ -4,7 +4,7 @@ const Footer = () => {
     return (
 
         <footer>
-            
+            <h1>Nanam</h1>
         </footer>
     )
 
