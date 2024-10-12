@@ -48,7 +48,7 @@
   label {
     display: block;
     margin-bottom: 5px;
-    font-family: "Cubao";
+    font-family: "Lexend";
   }
   
   input {
@@ -67,6 +67,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-family: "Lexend";
   }
   
   button:hover {
