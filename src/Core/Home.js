@@ -104,10 +104,14 @@ export default function Home(){
                                     <div class="MenuDownCard">
                                         <h2 class="Title"  id="MenuDownTitle1">SINGLES</h2>
                                         <ul>
+                                            <li>Arroz caldo</li>
+                                            <li>Longganisa</li>
+                                            <li>Lugaw</li>
                                             <li>Tocino</li>
                                             <li>Pares</li>
+                                            <li>Pritong Itlog</li>
+                                            <li>Tortang Giniling</li>
                                             <li>Tortang Talong</li>
-                                            <li>Lugaw</li>
                                         </ul>
 
                                     </div>
@@ -115,9 +119,13 @@ export default function Home(){
                                     <h2 class="Title"  id="MenuDownTitle1">SEAFOOD</h2>
                                         <ul>
                                             <li>Daing</li>
+                                            <li>Escabeche</li>
+                                            <li>Halabos na Hipon</li>
+                                            <li>Kilawin na Isda</li>
+                                            <li>Sinaing na Isda</li>
                                             <li>Sinigang na Hipon</li>
                                             <li>Tahong</li>
-                                            <li>Halabos na Hipon</li>
+                                            <li>Tuyo/Danggit</li>
                                         </ul>
 
                                     </div>
@@ -126,9 +134,13 @@ export default function Home(){
                                     <div class="MenuDownCard">
                                     <h2 class="Title"  id="MenuDownTitle1">MEAT</h2>
                                         <ul>
+                                            <li>Afritada</li>
                                             <li>Dinuguan</li>
                                             <li>Inasal</li>
                                             <li>Lechon Kawali</li>
+                                            <li>Lechon Paksiw</li>
+                                            <li>Lumpia</li>
+                                            <li>Menudo</li>
                                             <li>Kare-kare</li>
                                         </ul>
 
@@ -169,8 +181,6 @@ export default function Home(){
                                             </div>
                                     </div>
                                 </div>
-
-
                 </div>
             </div>
 
