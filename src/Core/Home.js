@@ -140,7 +140,6 @@ export default function Home(){
                                         <ul>
                                             <li>Regular rice</li>
                                             <li>Fried Rice</li>
-                                            <li>Risotto</li>
                                         </ul>
 
                                     </div>
@@ -151,22 +150,22 @@ export default function Home(){
                                 <div class="MenuDown2" id="DrinkDown2">
                                     <div class="Title"><h2 class="MenuDownTitle" id="DrinksTitle">DRINKS</h2></div>
                                             <div class="MenuDownCard" id="DrinkCard">
-                                            <h2 class="Title"  id="MenuDownTitle2">ALCHOHOLIC</h2>
+                                            <h2 class="Title"  id="MenuDownTitle2">ALCOHOLIC</h2>
                                                 <ul class="DrinkList">
-                                                    <li>Food1</li>
-                                                    <li>Food2</li>
-                                                    <li>Food3</li>
-                                                    <li>Food4</li>
+                                                    <li>Beer</li>
+                                                    <li>Gin</li>
+                                                    <li>Rum</li>
+                                                    <li>Brandy</li>
                                                 </ul>
 
                                             </div>
                                             <div class="MenuDownCard" id="DrinkCard">
                                             <h2 class="Title"  id="MenuDownTitle2">SOBER</h2>
                                                 <ul class="DrinkList">
-                                                    <li>Food1</li>
-                                                    <li>Food2</li>
-                                                    <li>Food3</li>
-                                                    <li>Food4</li>
+                                                    <li>Iced Tea</li>
+                                                    <li>Coke Regular</li>
+                                                    <li>Coke Zero</li>
+                                                    <li>Lemonade</li>
                                                 </ul>
 
                                             </div>
