@@ -25,20 +25,64 @@ const generateTimeOptions = () => {
   return times;
 };
 
-const Reservation = ({ showModal, handleClose }) => {
+const Reservation = ({ showModal, handleClose, isLoggedIn, userDetails }) => {
   const [date, setDate] = useState(new Date());
   const [people, setPeople] = useState(1);
   const [time, setTime] = useState('9:00 AM');
-  const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
+  const [email, setEmail] = useState(userDetails?.email || ''); // Pre-fill if logged in
+  const [name, setName] = useState(userDetails?.name || ''); // Pre-fill if logged in
   const [agreed, setAgreed] = useState(false);
+  const [error, setError] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ people, date, time, email, name, agreed });
+
+    setError('');
+    setSuccessMessage('');
+
+    if (!people || !date || !time || (!isLoggedIn && (!email || !name)) || !agreed) {
+      setError('Please fill in all fields and agree to the terms.');
+      return;
+    }
+
+    const reservationData = {
+      people,
+      date: date.toISOString(),
+      time,
+      email: isLoggedIn ? userDetails.email : email,
+      name: isLoggedIn ? userDetails.name : name,
+      agreed,
+    };
+
+    fetch('http://localhost:5000/Reservation', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(reservationData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.message === 'Reservation successful') {
+          setSuccessMessage('Reservation made successfully!');
+          setPeople(1);
+          setDate(new Date());
+          setTime('');
+          setEmail('');
+          setName('');
+          setAgreed(false);
+        } else {
+          setError('Failed to make a reservation. Please try again.');
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        setError('An error occurred while making the reservation. Please try again.');
+      });
   };
 
-  const timeOptions = generateTimeOptions(); // Get the generated time options
+  const timeOptions = generateTimeOptions();
 
   if (!showModal) {
     return null;
@@ -89,34 +133,41 @@ const Reservation = ({ showModal, handleClose }) => {
               ))}
             </select>
           </div>
-          <div className="form-group">
-            <label>Email address</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label>Full Name</label>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-          </div>
+          
+          {!isLoggedIn && (
+            <>
+              <div className="form-group">
+                <label>Email address</label>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required={!isLoggedIn}
+                />
+              </div>
+              <div className="form-group">
+                <label>Full Name</label>
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required={!isLoggedIn}
+                />
+              </div>
+            </>
+          )}
           
           <p className="terms">Agree to terms
-            
-              <input
+            <input
               type="checkbox"
               checked={agreed}
               onChange={(e) => setAgreed(e.target.checked)}
               required
-              />
+            />
           </p>
+          
+          {error && <p className="error-message">{error}</p>}
+          {successMessage && <p className="success-message">{successMessage}</p>}
           
           <button type="submit" className="submit-button">Confirm</button>
         </form>

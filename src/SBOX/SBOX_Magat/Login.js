@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./Login.css"
 
-const Login = ({ showModal, handleClose, openRegisterModal }) => {
+const Login = ({ showModal, handleClose, openRegisterModal, onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -9,7 +9,7 @@ const Login = ({ showModal, handleClose, openRegisterModal }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch('http://localhost:5000/login', {
+    fetch('http://localhost:5000/Login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -20,6 +20,9 @@ const Login = ({ showModal, handleClose, openRegisterModal }) => {
       .then((data) => {
         if (data.message === 'Login successful') {
           alert('Login successful!');
+          
+          onLogin({ email });
+          
           handleClose();
         } else {
           setError('Invalid email or password.');

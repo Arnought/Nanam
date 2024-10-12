@@ -9,6 +9,8 @@ const Navigation = () => {
     const [showLogin, setShowLogin] = useState(false);
     const [showRegister, setShowRegister] = useState(false);
     const [showReservation, setShowReservation] = useState(false); // State for Reservation
+    const [isLoggedIn, setIsLoggedIn] = useState(false); // User login state
+    const [userDetails, setUserDetails] = useState({ email: '', name: '' }); // User details
 
     const openLoginModal = () => {
         setShowLogin(true);
@@ -34,6 +36,19 @@ const Navigation = () => {
 
     const closeReservationModal = () => setShowReservation(false);
 
+    // Function to handle user login (example implementation)
+    const handleLogin = (user) => {
+        setIsLoggedIn(true);
+        setUserDetails(user); // Set user details on successful login
+        closeLoginModal(); // Close login modal after logging in
+    };
+
+    // Function to handle user logout
+    const handleLogout = () => {
+        setIsLoggedIn(false);
+        setUserDetails({ email: '', name: '' }); // Reset user details on logout
+    };
+
     return (
     <>
         <nav>
@@ -44,7 +59,11 @@ const Navigation = () => {
             </ul>
 
             <div className="login-container">
-                <button onClick={openLoginModal} className="login">Login</button>
+                {!isLoggedIn ? (
+                    <button onClick={openLoginModal} className="login">Login</button>
+                ) : (
+                    <button onClick={handleLogout} className="login">Logout</button>
+                )}
             </div>
         </nav>
 
@@ -52,6 +71,7 @@ const Navigation = () => {
             showModal={showLogin} 
             handleClose={closeLoginModal} 
             openRegisterModal={openRegisterModal} 
+            onLogin={handleLogin} // Pass login handler to Login component
         />
         <Register 
             showModal={showRegister} 
@@ -61,6 +81,8 @@ const Navigation = () => {
         <Reservation 
             showModal={showReservation} 
             handleClose={closeReservationModal} 
+            isLoggedIn={isLoggedIn} // Pass logged-in state
+            userDetails={userDetails} // Pass user details
         />
         <Outlet />
     </>

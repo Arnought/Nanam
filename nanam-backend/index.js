@@ -11,8 +11,8 @@ app.listen(PORT, () => {
 });
 
 let users = [];
+let reservation = [];
 
-// Login Route
 app.post('/login', (req, res) => {
   const { email, password } = req.body;
 
@@ -29,15 +29,33 @@ app.post('/login', (req, res) => {
 app.post('/register', (req, res) => {
   const { name, email, password } = req.body;
 
-
   const existingUser = users.find(user => user.email === email);
   
   if (existingUser) {
     return res.status(400).json({ message: 'User already exists' });
   }
-  // Save new user details (save this to a database in a real app)
+
   const newUser = { name, email, password };
   users.push(newUser);
 
   res.json({ message: 'Registration successful' });
+});
+
+
+app.post('/reservation', (req, res) => {
+  const { people, date, time, email, name } = req.body;
+
+  const newReservation = { id: reservation.length + 1, people, date, time, email, name };
+  reservation.push(newReservation);
+
+  res.json({ message: 'Reservation successful', reservation: newReservation });
+});
+
+
+app.get('/users', (req, res) => {
+  res.json(users);
+});
+
+app.get('/reservation', (req, res) => {
+  res.json(reservation);
 });

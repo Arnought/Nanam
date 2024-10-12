@@ -33,6 +33,7 @@ const Register = ({ showModal, handleClose, openLoginModal }) => {
         if (data.message === 'Registration successful') {
           alert('Registration successful!');
           handleClose();
+          setName = ('');
           openLoginModal();
         } else {
           setErrorMessage(data.message);
