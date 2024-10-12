@@ -3,6 +3,7 @@ import Navigation from './Navigation.js';
 import "./HomeStyle.css";
 
 export default function Home(){
+    document.title = "Home";
     return (
         <div>
             <Navigation />
