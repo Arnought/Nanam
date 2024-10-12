@@ -52,6 +52,7 @@ const Navigation = () => {
     return (
     <>
         <nav>
+                <li><Link to="/" className='home-title'>NANAM</Link></li>
             <ul className="center-links">
                 <li><Link to="/" className="link">Home</Link></li>
                 <li><Link onClick={openReservationModal} className='link'>Reservation</Link></li>

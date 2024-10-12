@@ -49,3 +49,9 @@ nav {
     background-color: #d41343;
     border-radius: 5px;
 }
+
+.home-title {
+    color: #d41343;
+    font-family: "Cubao";
+    font-size: 300%;
+}
