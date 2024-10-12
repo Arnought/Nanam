@@ -24,6 +24,12 @@ html{
   align-items: center;
 }
 
+p {
+  font-family: "Lexend";
+}
+ul {
+  font-family: "Lexend";
+}
 /* SHAPES */
 
 
@@ -33,7 +39,12 @@ html{
   height: 300px;
   margin-top: -10%;
   margin-left: -5%;
+}
 
+#Stamp2 {
+  width: 400px;
+  height: 400px;
+  margin-bottom: -200px;
 }
 
 .LessPointElem {
@@ -64,10 +75,9 @@ html{
 .MorePoint {
   transform: rotate(100deg);
   align-self: baseline;
-  margin-top: -160%;
-  margin-left: -150%;
   width: 400px;
   height: 400px;
+  margin-top: -150px;
 }
 
 .Star{
@@ -75,21 +85,27 @@ html{
   height: 400px;
   transform: rotate(100deg);
   align-self: center;
-  margin-left: -300%;
-  margin-top: -100%;
 }
 
 .FatStar{
   transform: rotate(100deg);
-  align-self: baseline;
   width: 400px;
   height: 400px;
+  margin-right: -500px;
+  margin-top: -150px;
 }
+.Star3{
+  transform: rotate(100deg);
+  width: 400px;
+  height: 400px;
+  margin-right: -500px;
+  margin-top: -200px;
 
+}
 .Circle {
-  width: 300px;
-  height: 300px;
-  margin-left: 0;
+  width: 400px;
+  height: 400px;
+  margin-right: -500px;
   transform: rotate(100deg);
   }
   
@@ -176,12 +192,20 @@ html{
 }
 
 .MenuBGCont{ 
+  flex-direction: column;
+  display: flex;
+  position: relative;
+  z-index: -2;
+  background-image: linear-gradient(180deg, #f9c91a ,#ffae00);
+}
+
+.MenuMain1 {
   position: relative;
   z-index: -1;
   justify-content: space-between;
   display: flex;
   flex-direction: row;
-  background-image: linear-gradient(180deg, #f9c91a ,#ffae00);
+
 }
 
 .MenuCenter {
@@ -205,11 +229,94 @@ html{
   margin-left: -131px;
 }
 
+.MenuDown {
+  align-self: center;
+  display: flex;
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
+
+.DownContMenu{
+  display: flex;
+  flex-direction: column;
+  height: 800px;
+  width: 800px;
+  background-color: white;
+  box-shadow: 10px 10px #000000;
+  border: 5px solid #000000;
+  border-radius: 30px;
+}
+
+.MenuDownTitle {
+margin: 20px;
+}
+.MenuDownCard {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 400px;
+}
+
+.MenuDown2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.DrinkList {
+  color:White;
+}
+#DrinkDown2 {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+#DrinkCard {
+}
+
+.MenuDownTitle {
+  color: #d41343;
+}
+
+#DrinksTitle {
+color: white;
+}
+
+#MenuDownTitle1 {
+margin-top: 0%;
+align-self: flex-start;
+}
+
+#MenuDownTitle2 {
+  margin-top: 0%;
+  align-self: flex-start;
+  color: White;
+}
+
+#MenuDownDrink {
+  display: flex;
+  align-items: end;
+  position: relative;
+  z-index: -1;
+  margin-left: -150px;
+  background-color: #d41343;
+  width: 600px;
+}
+
 /* +++++FIX FLEX DIRECTION + THE SHAPES POSITION HIERARCHY+++++ */
 .ShapeSideMenu {
   display: flex;
-  width: 100px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 500px;
+  margin-left: -200px;
+  white-space: nowrap;
+  overflow: hidden;
 }
+
+
 
 .MenuTitle {
  display: flex;
