@@ -28,6 +28,7 @@ const generateTimeOptions = () => {
 const Reservation = ({ showModal, handleClose, isLoggedIn, userDetails }) => {
   const [date, setDate] = useState(new Date());
   const [people, setPeople] = useState(1);
+  const [customPeople, setCustomPeople] = useState(''); // For custom input when people > 8
   const [time, setTime] = useState('9:00 AM');
   const [email, setEmail] = useState(userDetails?.email || ''); // Pre-fill if logged in
   const [name, setName] = useState(userDetails?.name || ''); // Pre-fill if logged in
@@ -41,13 +42,20 @@ const Reservation = ({ showModal, handleClose, isLoggedIn, userDetails }) => {
     setError('');
     setSuccessMessage('');
 
-    if (!people || !date || !time || (!isLoggedIn && (!email || !name)) || !agreed) {
+    const numberOfPeople = people === '8+' ? customPeople : people;
+
+    if (!numberOfPeople || !date || !time || (!isLoggedIn && (!email || !name)) || !agreed) {
       setError('Please fill in all fields and agree to the terms.');
       return;
     }
 
+    if (people === '8+' && (!customPeople || customPeople <= 8)) {
+      setError('Please specify a valid number greater than 8.');
+      return;
+    }
+
     const reservationData = {
-      people,
+      people: numberOfPeople,
       date: date.toISOString(),
       time,
       email: isLoggedIn ? userDetails.email : email,
@@ -71,6 +79,7 @@ const Reservation = ({ showModal, handleClose, isLoggedIn, userDetails }) => {
           setTime('');
           setEmail('');
           setName('');
+          setCustomPeople('');
           setAgreed(false);
         } else {
           setError('Failed to make a reservation. Please try again.');
@@ -99,17 +108,27 @@ const Reservation = ({ showModal, handleClose, isLoggedIn, userDetails }) => {
         <form className="reservation-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Number of People</label>
-            <select value={people} onChange={(e) => setPeople(e.target.value)}>
-              <option value={1}>1 Person</option>
-              <option value={2}>2 People</option>
-              <option value={3}>3 People</option>
-              <option value={4}>4 People</option>
-              <option value={5}>5 People</option>
-              <option value={6}>6 People</option>
-              <option value={7}>7 People</option>
-              <option value={8}>8 People</option>
-              <option value="8+">8+ People</option>
-            </select>
+            {people !== '8+' ? (
+              <select value={people} onChange={(e) => setPeople(e.target.value)}>
+                <option value={1}>1 Person</option>
+                <option value={2}>2 People</option>
+                <option value={3}>3 People</option>
+                <option value={4}>4 People</option>
+                <option value={5}>5 People</option>
+                <option value={6}>6 People</option>
+                <option value={7}>7 People</option>
+                <option value="8+">8+ People</option>
+              </select>
+            ) : (
+              <input
+                type="number"
+                value={customPeople}
+                onChange={(e) => setCustomPeople(e.target.value)}
+                placeholder="Enter number of people"
+                min="9"
+                required
+              />
+            )}
           </div>
           <div className="form-group">
             <label>Date</label>
@@ -133,7 +152,7 @@ const Reservation = ({ showModal, handleClose, isLoggedIn, userDetails }) => {
               ))}
             </select>
           </div>
-          
+
           {!isLoggedIn && (
             <>
               <div className="form-group">
@@ -156,7 +175,7 @@ const Reservation = ({ showModal, handleClose, isLoggedIn, userDetails }) => {
               </div>
             </>
           )}
-          
+
           <p className="terms">Agree to terms
             <input
               type="checkbox"
@@ -165,10 +184,10 @@ const Reservation = ({ showModal, handleClose, isLoggedIn, userDetails }) => {
               required
             />
           </p>
-          
+
           {error && <p className="error-message">{error}</p>}
           {successMessage && <p className="success-message">{successMessage}</p>}
-          
+
           <button type="submit" className="submit-button">Confirm</button>
         </form>
       </div>
