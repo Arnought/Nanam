@@ -18,13 +18,7 @@ const About = () => {
                     </div>
                     
                     <div id="description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                    nisi ut aliquip ex non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
-                    dicta sunt explicabo.</p>
+                    <p>Nanam's warm, welcoming ambiance creates a cozy yet stylish dining experience perfect for family gatherings, friendly meals, or special occasions. This is a place where Filipino culture and culinary passion come together. Stop by and eat with us at Panay Ave, Quezon City.</p>
                     </div>
                 </div>
                 <br /><br /><br /><br />
