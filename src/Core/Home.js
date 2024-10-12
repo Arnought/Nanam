@@ -7,8 +7,6 @@ export default function Home(){
     return (
         <div>
             <Navigation />
-
-
             
             <div class="MainCont">
                 <img src="/Assets/Shapes/Stamp.png" alt="Stamp" class="Stamp"></img>
@@ -26,7 +24,7 @@ export default function Home(){
 
                             </div>
                             <div class="ColorCont">
-                                <div class="InfoTxt"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p></div>
+                                <div class="InfoTxt"><p>Nanam is a modern Filipino restaurant that brings the rich, vibrant flavors of the Philippines to life in every dish. This restaurant prides itself on using fresh, locally sourced ingredients, delivering bold, savory, and comforting flavors that embody the essence of Filipino cooking.</p></div>
                                 <img src="/Assets/FoodImg/TableFood.png" alt="food" class="ImgInfo"></img>
                             </div>
                         </div>
@@ -60,11 +58,11 @@ export default function Home(){
                                     <div class="MenuCont">
                                         <div class="MenuContCard">
                                             <img src="/Assets/FoodImg/Liempo.png" alt="food" class="ImgMenu"></img>
-                                            <div class="MenuTxt"><h2 class="Title">Adobong Manok</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p></div>
+                                            <div class="MenuTxt"><h2 class="Title">Adobong Manok</h2><p>Adobo is meat marinated in soy sauce and vinegar, one of Philippines' most popular dish and loved by many. Because Adobo recipes varies, this recipe includes garlic, potatoes, and black pepper.</p></div>
                                         </div>
 
                                         <div class="MenuContCard">
-                                            <div class="MenuTxt"><h2 class="Title">Sinigang</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p></div>
+                                            <div class="MenuTxt"><h2 class="Title">Sinigang</h2><p>Sinigang is a soup made sour with the use of tamarind. Enjoy this dish with different varieties; fish, chicken, or pork.</p></div>
                                             <img src="/Assets/FoodImg/Sisig.png" alt="food" class="ImgMenu" id="ImgMenuRight"></img>
                                         </div>
                                     </div>
@@ -77,11 +75,11 @@ export default function Home(){
                                     <div class="MenuCont">
                                         <div class="MenuContCard">
                                             <img src="/Assets/image.png" alt="food" class="ImgMenu"></img>
-                                            <div class="MenuTxt"><h2 class="Title">Dinuguan</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p></div>
+                                            <div class="MenuTxt"><h2 class="Title">Tinolang Manok</h2><p>Tinolang Manok is a well-loved Filipino comfort food dish. It's a great tasting and healthy dish for you and your family. </p></div>
                                         </div>
 
                                         <div class="MenuContCard">
-                                            <div class="MenuTxt"><h2 class="Title">Kare-kare</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p></div>
+                                            <div class="MenuTxt"><h2 class="Title">Kare-kare</h2><p>Kare-kare is uniquely Filipino dish made with simmered oxtail, vegetables and thick savory peanut sauce. The stew is flavored with ground roasted peanuts or peanut butter, onions, and garlic.</p></div>
                                             <img src="/Assets/image.png" alt="food" class="ImgMenu" id="ImgMenuRight"></img>
                                         </div>
                                     </div>
@@ -110,6 +108,7 @@ export default function Home(){
                                             <li>Pares</li>
                                             <li>Tortang Talong</li>
                                             <li>Sisig</li>
+                                            <li>Lugaw</li>
                                         </ul>
 
                                     </div>
@@ -128,7 +127,7 @@ export default function Home(){
                                     <div class="MenuDownCard">
                                     <h2 class="Title"  id="MenuDownTitle1">MEAT</h2>
                                         <ul>
-                                            <li>Tinolang Manok</li>
+                                            <li>Dinuguan</li>
                                             <li>Inasal</li>
                                             <li>Lechon Kawali</li>
                                             <li>Liempo</li>
