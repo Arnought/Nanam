@@ -58,11 +58,11 @@ export default function Home(){
                                     <div class="MenuCont">
                                         <div class="MenuContCard">
                                             <img src="/Assets/FoodImg/Liempo.png" alt="food" class="ImgMenu"></img>
-                                            <div class="MenuTxt"><h2 class="Title">Adobong Manok</h2><p>Adobo is meat marinated in soy sauce and vinegar, one of Philippines' most popular dish and loved by many. Because Adobo recipes varies, this recipe includes garlic, potatoes, and black pepper.</p></div>
+                                            <div class="MenuTxt"><h2 class="Title">Liempo</h2><p>Liempo is marinated in a mixture of crushed garlic, vinegar, salt, and pepper before being grilled. It is then served with soy sauce and vinegar or vinegar with garlic.</p></div>
                                         </div>
 
                                         <div class="MenuContCard">
-                                            <div class="MenuTxt"><h2 class="Title">Sinigang</h2><p>Sinigang is a soup made sour with the use of tamarind. Enjoy this dish with different varieties; fish, chicken, or pork.</p></div>
+                                            <div class="MenuTxt"><h2 class="Title">Sisig</h2><p>Sisig is a dish made from pork jowl and ears, pork belly, and chicken liver, which is usually seasoned with calamansi, onions, and chili peppers. This dish is a staple of Kapampangan cuisine.</p></div>
                                             <img src="/Assets/FoodImg/Sisig.png" alt="food" class="ImgMenu" id="ImgMenuRight"></img>
                                         </div>
                                     </div>
@@ -74,13 +74,13 @@ export default function Home(){
                                     
                                     <div class="MenuCont">
                                         <div class="MenuContCard">
-                                            <img src="/Assets/image.png" alt="food" class="ImgMenu"></img>
+                                            <img src="/Assets/FoodImg/Tinolang-Manok.png" alt="food" class="ImgMenu"></img>
                                             <div class="MenuTxt"><h2 class="Title">Tinolang Manok</h2><p>Tinolang Manok is a well-loved Filipino comfort food dish. It's a great tasting and healthy dish for you and your family. </p></div>
                                         </div>
 
                                         <div class="MenuContCard">
-                                            <div class="MenuTxt"><h2 class="Title">Kare-kare</h2><p>Kare-kare is uniquely Filipino dish made with simmered oxtail, vegetables and thick savory peanut sauce. The stew is flavored with ground roasted peanuts or peanut butter, onions, and garlic.</p></div>
-                                            <img src="/Assets/image.png" alt="food" class="ImgMenu" id="ImgMenuRight"></img>
+                                            <div class="MenuTxt"><h2 class="Title">Adobong Manok</h2><p>Adobo is meat marinated in soy sauce and vinegar, one of Philippines' most popular dish and loved by many. Because Adobo recipes varies, this recipe includes garlic, potatoes, and black pepper.</p></div>
+                                            <img src="/Assets/FoodImg/adobo.png" alt="food" class="ImgMenu" id="ImgMenuRight"></img>
                                         </div>
                                     </div>
                                 </div>
@@ -107,7 +107,6 @@ export default function Home(){
                                             <li>Tocino</li>
                                             <li>Pares</li>
                                             <li>Tortang Talong</li>
-                                            <li>Sisig</li>
                                             <li>Lugaw</li>
                                         </ul>
 
@@ -130,7 +129,7 @@ export default function Home(){
                                             <li>Dinuguan</li>
                                             <li>Inasal</li>
                                             <li>Lechon Kawali</li>
-                                            <li>Liempo</li>
+                                            <li>Kare-kare</li>
                                         </ul>
 
                                     </div>
@@ -162,8 +161,8 @@ export default function Home(){
                                             <h2 class="Title"  id="MenuDownTitle2">SOBER</h2>
                                                 <ul class="DrinkList">
                                                     <li>Iced Tea</li>
-                                                    <li>Coke Regular</li>
-                                                    <li>Coke Zero</li>
+                                                    <li>Calamansi</li>
+                                                    <li>Orange</li>
                                                     <li>Lemonade</li>
                                                 </ul>
 
