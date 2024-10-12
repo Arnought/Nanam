@@ -115,10 +115,10 @@ export default function Home(){
                                     <div class="MenuDownCard">
                                     <h2 class="Title"  id="MenuDownTitle1">SEAFOOD</h2>
                                         <ul>
-                                            <li>Food1</li>
-                                            <li>Food2</li>
-                                            <li>Food3</li>
-                                            <li>Food4</li>
+                                            <li>Daing</li>
+                                            <li>Sinigang na Hipon</li>
+                                            <li>Tahong</li>
+                                            <li>Halabos na Hipon</li>
                                         </ul>
 
                                     </div>
@@ -137,10 +137,9 @@ export default function Home(){
                                     <div class="MenuDownCard">
                                     <h2 class="Title"  id="MenuDownTitle1">RICE</h2>
                                         <ul>
-                                            <li>Food1</li>
-                                            <li>Food2</li>
-                                            <li>Food3</li>
-                                            <li>Food4</li>
+                                            <li>Regular rice</li>
+                                            <li>Fried Rice</li>
+                                            <li>Risotto</li>
                                         </ul>
 
                                     </div>
