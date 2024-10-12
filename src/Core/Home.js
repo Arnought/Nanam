@@ -59,11 +59,11 @@ export default function Home(){
                                     <div class="MenuCont">
                                         <div class="MenuContCard">
                                             <img src="/Assets/FoodImg/Liempo.png" alt="food" class="ImgMenu"></img>
-                                            <div class="MenuTxt"><h2 class="Title">ITEM 1</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p></div>
+                                            <div class="MenuTxt"><h2 class="Title">Adobong Manok</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p></div>
                                         </div>
 
                                         <div class="MenuContCard">
-                                            <div class="MenuTxt"><h2 class="Title">ITEM 2</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p></div>
+                                            <div class="MenuTxt"><h2 class="Title">Sinigang</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p></div>
                                             <img src="/Assets/FoodImg/Sisig.png" alt="food" class="ImgMenu" id="ImgMenuRight"></img>
                                         </div>
                                     </div>
@@ -76,11 +76,11 @@ export default function Home(){
                                     <div class="MenuCont">
                                         <div class="MenuContCard">
                                             <img src="/Assets/image.png" alt="food" class="ImgMenu"></img>
-                                            <div class="MenuTxt"><h2 class="Title">ITEM 1</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p></div>
+                                            <div class="MenuTxt"><h2 class="Title">Dinuguan</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p></div>
                                         </div>
 
                                         <div class="MenuContCard">
-                                            <div class="MenuTxt"><h2 class="Title">ITEM 2</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p></div>
+                                            <div class="MenuTxt"><h2 class="Title">Kare-kare</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p></div>
                                             <img src="/Assets/image.png" alt="food" class="ImgMenu" id="ImgMenuRight"></img>
                                         </div>
                                     </div>
