@@ -1,61 +1,107 @@
 const express = require('express');
 const cors = require('cors');
+const mongoose = require('mongoose');
 const app = express();
 const PORT = 5000;
 
+// Middleware
 app.use(cors());
 app.use(express.json());
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+// MongoDB connection
+mongoose.connect('mongodb://localhost:27017/nanam', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+  .then(() => console.log('Connected to MongoDB'))
+  .catch((err) => console.error('MongoDB connection error:', err));
+
+// Define Mongoose Schemas and Models
+const userSchema = new mongoose.Schema({
+  name: String,
+  email: { type: String, unique: true },
+  password: String,
 });
 
-let users = [];
-let reservation = [];
+const reservationSchema = new mongoose.Schema({
+  people: Number,
+  date: String,
+  time: String,
+  email: String,
+  name: String,
+});
 
-app.post('/login', (req, res) => {
+const User = mongoose.model('User', userSchema);
+const Reservation = mongoose.model('Reservation', reservationSchema);
+
+// Routes
+app.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
-  const user = users.find(user => user.email === email && user.password === password);
-
-  if (user) {
-    res.json({ message: 'Login successful' });
-  } else {
-    res.status(401).json({ message: 'Invalid email or password' });
+  try {
+    const user = await User.findOne({ email, password });
+    if (user) {
+      res.json({ message: 'Login successful' });
+    } else {
+      res.status(401).json({ message: 'Invalid email or password' });
+    }
+  } catch (error) {
+    console.error('Error during login:', error);
+    res.status(500).json({ message: 'An error occurred' });
   }
 });
 
-
-app.post('/register', (req, res) => {
+app.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
 
-  const existingUser = users.find(user => user.email === email);
-  
-  if (existingUser) {
-    return res.status(400).json({ message: 'User already exists' });
+  try {
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ message: 'User already exists' });
+    }
+
+    const newUser = new User({ name, email, password });
+    await newUser.save();
+    res.json({ message: 'Registration successful' });
+  } catch (error) {
+    console.error('Error during registration:', error);
+    res.status(500).json({ message: 'An error occurred' });
   }
-
-  const newUser = { name, email, password };
-  users.push(newUser);
-
-  res.json({ message: 'Registration successful' });
 });
 
-
-app.post('/reservation', (req, res) => {
+app.post('/reservation', async (req, res) => {
   const { people, date, time, email, name } = req.body;
 
-  const newReservation = { id: reservation.length + 1, people, date, time, email, name };
-  reservation.push(newReservation);
-
-  res.json({ message: 'Reservation successful', reservation: newReservation });
+  try {
+    const newReservation = new Reservation({ people, date, time, email, name });
+    await newReservation.save();
+    res.json({ message: 'Reservation successful', reservation: newReservation });
+  } catch (error) {
+    console.error('Error during reservation:', error);
+    res.status(500).json({ message: 'An error occurred' });
+  }
 });
 
-
-app.get('/users', (req, res) => {
-  res.json(users);
+app.get('/users', async (req, res) => {
+  try {
+    const users = await User.find();
+    res.json(users);
+  } catch (error) {
+    console.error('Error fetching users:', error);
+    res.status(500).json({ message: 'An error occurred' });
+  }
 });
 
-app.get('/reservation', (req, res) => {
-  res.json(reservation);
+app.get('/reservation', async (req, res) => {
+  try {
+    const reservations = await Reservation.find();
+    res.json(reservations);
+  } catch (error) {
+    console.error('Error fetching reservations:', error);
+    res.status(500).json({ message: 'An error occurred' });
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
