@@ -93,7 +93,15 @@ app.get('/users', async (req, res) => {
   }
 });
 
-
+app.get('/reservation', async (req, res) => {
+  try {
+    const reservations = await Reservation.find();
+    res.json(reservations);
+  } catch (error) {
+    console.error('Error fetching reservations:', error);
+    res.status(500).json({ message: 'An error occurred' });
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
