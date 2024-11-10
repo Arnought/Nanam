@@ -1,6 +1,8 @@
 import React from 'react';
 import Navigation from './Navigation.js';
 import "./HomeStyle.css";
+import MenuCard1 from './MenuCard1.js';
+import MenuCard2 from './MenuCard2.js';
 
 export default function Home(){
     document.title = "Home";
@@ -56,15 +58,17 @@ export default function Home(){
                                 <div class="DesMain" id="TopMenu1">
                                     
                                     <div class="MenuCont">
-                                        <div class="MenuContCard">
-                                            <img src="/Assets/FoodImg/Liempo.png" alt="food" class="ImgMenu"></img>
-                                            <div class="MenuTxt"><h2 class="Title">Liempo</h2><p>Liempo is marinated in a mixture of crushed garlic, vinegar, salt, and pepper before being grilled. It is then served with soy sauce and vinegar or vinegar with garlic.</p></div>
-                                        </div>
+                                        <MenuCard1 imgMenuCard1="/Assets/FoodImg/Liempo.png"  
+                                        altMenuCard1="foodLiempo"
+                                        MenuName1="Liempo"
+                                        MenuDescript1="Liempo is marinated in a mixture of crushed garlic, vinegar, salt, and pepper before being grilled. It is then served with soy sauce and vinegar or vinegar with garlic."
+                                        />
 
-                                        <div class="MenuContCard">
-                                            <div class="MenuTxt"><h2 class="Title">Sisig</h2><p>Sisig is a dish made from pork jowl and ears, pork belly, and chicken liver, which is usually seasoned with calamansi, onions, and chili peppers. This dish is a staple of Kapampangan cuisine.</p></div>
-                                            <img src="/Assets/FoodImg/Sisig.png" alt="food" class="ImgMenu" id="ImgMenuRight"></img>
-                                        </div>
+                                        <MenuCard2 imgMenuCard2="/Assets/FoodImg/Sisig.png"  
+                                        altMenuCard2="foodSisig"
+                                        MenuName2="Sisig"
+                                        MenuDescript2="Sisig is a dish made from pork jowl and ears, pork belly, and chicken liver, which is usually seasoned with calamansi, onions, and chili peppers. This dish is a staple of Kapampangan cuisine."
+                                        />
                                     </div>
                                     <img src="/Assets/Shapes/4Star.png" alt="4Star" class="Star4Elem"></img>
                                 </div>
@@ -73,15 +77,21 @@ export default function Home(){
                                     <img src="/Assets/Shapes/Diamond.png" alt="Diamond" class="Diamond"></img>
                                     
                                     <div class="MenuCont">
-                                        <div class="MenuContCard">
-                                            <img src="/Assets/FoodImg/Tinolang-Manok.png" alt="food" class="ImgMenu"></img>
-                                            <div class="MenuTxt"><h2 class="Title">Tinolang Manok</h2><p>Tinolang Manok is a well-loved Filipino comfort food dish. It's a great tasting and healthy dish for you and your family. </p></div>
-                                        </div>
+                                        <MenuCard1 imgMenuCard1="/Assets/FoodImg/Tinolang-Manok.png"  
+                                        altMenuCard1="foodTinolangManok"
+                                        MenuName1="Tinolang Manok"
+                                        MenuDescript1="Tinolang Manok is a well-loved Filipino comfort food dish. It's a great tasting and healthy dish for you and your family."
+                                        />
 
-                                        <div class="MenuContCard">
+                                        <MenuCard2 imgMenuCard2="/Assets/FoodImg/adobo.png"  
+                                        altMenuCard2="foodAdobong Manok"
+                                        MenuName2="Adobong Manok"
+                                        MenuDescript2="Adobo is meat marinated in soy sauce and vinegar, one of Philippines' most popular dish and loved by many. Because Adobo recipes varies, this recipe includes garlic, potatoes, and black pepper."
+                                        />
+                                        {/* <div class="MenuContCard">
                                             <div class="MenuTxt"><h2 class="Title">Adobong Manok</h2><p>Adobo is meat marinated in soy sauce and vinegar, one of Philippines' most popular dish and loved by many. Because Adobo recipes varies, this recipe includes garlic, potatoes, and black pepper.</p></div>
                                             <img src="/Assets/FoodImg/adobo.png" alt="food" class="ImgMenu" id="ImgMenuRight"></img>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
 
