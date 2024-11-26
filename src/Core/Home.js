@@ -1,28 +1,38 @@
-import React, { useState } from 'react';
+import React, {useState, useEffect} from 'react';
 import Navigation from './Navigation.js';
 import "./HomeStyle.css";
-import MenuCard1 from './MenuCard1.js';
-import MenuCard2 from './MenuCard2.js';
-// id: String,
-//   imgSrc: String,
-//   imgAlt: String,
-//   name: String,
-//   description: String,
+// import MenuCard1 from './MenuCard1.js';
+// import MenuCard2 from './MenuCard2.js';
 
 const HomePage = ({ MenuItem }) => {
-// export default function Home(){
-    const [imgSrc, setImgSrc] = useState('');
-    const [imgAlt, setImgAlt] = useState('');
-    const [name, setName] = useState('');
-    const [description, setDescription] = useState('');
+    const [menuItems, setMenuItems] = useState([]);
+// // export default function Home(){
+    useEffect(() => {
+        const fetchMenuItems = async () => {
+          try {
+            const response = await fetch('http://localhost:5000/home');
+            const data = await response.json();
+            setMenuItems(data);
+          } catch (error) {
+            console.error('Error fetching menu items:', error);
+          }
+        };
+    
+        fetchMenuItems();
+      }, []);
+    
+//     const [imgSrc, setImgSrc] = useState('');
+//     const [imgAlt, setImgAlt] = useState('');
+//     const [name, setName] = useState('');
+//     const [description, setDescription] = useState('');
 
-    fetch('http://localhost:5000/home', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ imgSrc, imgAlt, name, description }),
-      })
+//     fetch('http://localhost:5000/home', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({ imgSrc, imgAlt, name, description }),
+//       })
  
     return (
         <div>
@@ -71,13 +81,24 @@ const HomePage = ({ MenuItem }) => {
                                 <h1 class="Title" id="MenuTitle">Menu</h1>
                                 <h1 class="BaybayinTitle" id="BaybayinTitleMenu">Pagpipilian</h1>
                                 </div>
-
-                                
                             </div>
-                    
+                            <div class="DesMain" id="TopMenu1">
+                                <div className="MenuCont">
+                                {menuItems.map((item) => (
+                                    <div key={item._id} className="MenuContCard">
+                                    <img src={item.imgSrc} alt={item.imgAlt} className="ImgMenu" />
+                                        <div className="MenuTxt">
+                                            <h2 className="Title">{item.name}</h2>
+                                            <p className="">{item.description}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                                </div>
+                            </div>
+
                                     
-                                    <div class="DesMain" id="TopMenu1">
-                                        <div class="MenuCont">
+                                    {/* <div class="DesMain" id="TopMenu1"> */}
+                                        {/* <div class="MenuCont">
                                         <MenuCard1 imgMenuCard1= {setImgSrc}
                                         altMenuCard1={setImgAlt}
                                         MenuName1={setName}
@@ -88,7 +109,7 @@ const HomePage = ({ MenuItem }) => {
                                         altMenuCard2={setImgAlt}
                                         MenuName2={setName}
                                         MenuDescript2={setDescription}
-                                        />
+                                        /> */}
                                         {/* <MenuCard1 imgMenuCard1="/Assets/FoodImg/Liempo.png"  
                                         altMenuCard1="foodLiempo"
                                         MenuName1="Liempo"
@@ -100,15 +121,15 @@ const HomePage = ({ MenuItem }) => {
                                         MenuName2="Sisig"
                                         MenuDescript2="Sisig is a dish made from pork jowl and ears, pork belly, and chicken liver, which is usually seasoned with calamansi, onions, and chili peppers. This dish is a staple of Kapampangan cuisine."
                                         /> */}
-                                        </div>
-                                    <img src="/Assets/Shapes/4Star.png" alt="4Star" class="Star4Elem"></img>
+                                        {/* </div> */}
+                                    {/* <img src="/Assets/Shapes/4Star.png" alt="4Star" class="Star4Elem"></img>
                                 </div>
                                 
                                 <div class="DesMain" id="TopMenu2">
                                     <img src="/Assets/Shapes/Diamond.png" alt="Diamond" class="Diamond"></img>
                                     
-                                    <div class="MenuCont">
-                                        <MenuCard1 imgMenuCard1= {setImgSrc}
+                                    <div class="MenuCont"> */}
+                                        {/* <MenuCard1 imgMenuCard1= {setImgSrc}
                                         altMenuCard1={setImgAlt}
                                         MenuName1={setName}
                                         MenuDescript1={setDescription}
@@ -118,7 +139,7 @@ const HomePage = ({ MenuItem }) => {
                                         altMenuCard2={setImgAlt}
                                         MenuName2={setName}
                                         MenuDescript2={setDescription}
-                                        />
+                                        /> */}
                                         {/* <MenuCard1 imgMenuCard1="/Assets/FoodImg/Tinolang-Manok.png"  
                                         altMenuCard1="foodTinolangManok"
                                         MenuName1="Tinolang Manok"
@@ -132,8 +153,8 @@ const HomePage = ({ MenuItem }) => {
                                         MenuName2="Adobong Manok"
                                         MenuDescript2="Adobo is meat marinated in soy sauce and vinegar, one of Philippines' most popular dish and loved by many. Because Adobo recipes varies, this recipe includes garlic, potatoes, and black pepper."
                                         /> */}
-                                    </div>
-                                </div>
+                                    
+                                {/* </div> */}
                             </div>
 
                     <div class="ShapeSideMenu" id="ShapeSideR">
