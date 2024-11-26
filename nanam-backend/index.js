@@ -23,11 +23,19 @@ const userSchema = new mongoose.Schema({
   password: String,
 });
 
+const reservationSchema = new mongoose.Schema({
+  people: Number,
+  date: String,
+  time: String,
+  email: String,
+  name: String,
+});
 
 const User = mongoose.model('User', userSchema);
-
+const Reservation = mongoose.model('Reservation', reservationSchema);
 
 // Routes
+// POSTS
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
@@ -62,7 +70,19 @@ app.post('/register', async (req, res) => {
   }
 });
 
+app.post('/reservation', async (req, res) => {
+  const { people, name, date, time, email } = req.body;
+  try {
+    const newReservation = new Reservation({ people, name, date, time, email });
+    await newReservation.save();
+    res.json({ message: 'Reservation successful', reservation: newReservation });
+  } catch (error) {
+    console.error('Error during reservation:', error);
+    res.status(500).json({ message: 'An error occurred' });
+  }
+});
 
+// GET
 app.get('/users', async (req, res) => {
   try {
     const users = await User.find();
@@ -73,7 +93,15 @@ app.get('/users', async (req, res) => {
   }
 });
 
-
+app.get('/reservation', async (req, res) => {
+  try {
+    const reservations = await Reservation.find();
+    res.json(reservations);
+  } catch (error) {
+    console.error('Error fetching reservations:', error);
+    res.status(500).json({ message: 'An error occurred' });
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
