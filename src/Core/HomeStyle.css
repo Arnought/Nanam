@@ -291,6 +291,24 @@ align-self: flex-start;
   color: White;
 }
 
+.ImgMenu {
+  background-color: #ffffff;
+  box-shadow: 10px 10px #d41343;
+  border: 5px solid #000000;
+  margin-left: -150px;
+  border-radius: 20px;
+  height: 200px;
+  width: 400px;
+  object-fit: cover;
+}
+
+#ImgMenuRight {
+  box-shadow: 10px 10px #823eff;
+  transform: rotate(10deg);
+  margin-left: 0px;
+  margin-right: -150px;
+}
+
 #MenuDownDrink {
   display: flex;
   align-items: end;
@@ -300,6 +318,8 @@ align-self: flex-start;
   background-color: #d41343;
   width: 600px;
 }
+
+
 
 /* +++++FIX FLEX DIRECTION + THE SHAPES POSITION HIERARCHY+++++ */
 .ShapeSideMenu {
@@ -341,24 +361,7 @@ align-self: flex-start;
   border-radius: 30px;
 }
 
-.ImgMenu {
-  background-color: #ffffff;
-  box-shadow: 10px 10px #d41343;
-  border: 5px solid #000000;
-  margin-left: -150px;
-  border-radius: 20px;
-  height: 200px;
-  width: 400px;
-  transform: rotate(-10deg);
-  object-fit: cover;
-}
 
-#ImgMenuRight {
-  box-shadow: 10px 10px #823eff;
-  transform: rotate(10deg);
-  margin-left: 0px;
-  margin-right: -150px;
-}
 
 .MenuTxt {
   padding:50px;
