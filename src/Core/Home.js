@@ -1,11 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navigation from './Navigation.js';
 import "./HomeStyle.css";
 import MenuCard1 from './MenuCard1.js';
 import MenuCard2 from './MenuCard2.js';
+// id: String,
+//   imgSrc: String,
+//   imgAlt: String,
+//   name: String,
+//   description: String,
 
-export default function Home(){
-    document.title = "Home";
+const HomePage = ({ MenuItem }) => {
+// export default function Home(){
+    const [imgSrc, setImgSrc] = useState('');
+    const [imgAlt, setImgAlt] = useState('');
+    const [name, setName] = useState('');
+    const [description, setDescription] = useState('');
+
+    fetch('http://localhost:5000/home', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ imgSrc, imgAlt, name, description }),
+      })
+ 
     return (
         <div>
             <Navigation />
@@ -53,12 +71,25 @@ export default function Home(){
                                 <h1 class="Title" id="MenuTitle">Menu</h1>
                                 <h1 class="BaybayinTitle" id="BaybayinTitleMenu">Pagpipilian</h1>
                                 </div>
-                            </div>
 
-                                <div class="DesMain" id="TopMenu1">
+                                
+                            </div>
+                    
                                     
-                                    <div class="MenuCont">
-                                        <MenuCard1 imgMenuCard1="/Assets/FoodImg/Liempo.png"  
+                                    <div class="DesMain" id="TopMenu1">
+                                        <div class="MenuCont">
+                                        <MenuCard1 imgMenuCard1= {setImgSrc}
+                                        altMenuCard1={setImgAlt}
+                                        MenuName1={setName}
+                                        MenuDescript1={setDescription}
+                                        />
+
+                                        <MenuCard2 imgMenuCard2={setImgSrc}  
+                                        altMenuCard2={setImgAlt}
+                                        MenuName2={setName}
+                                        MenuDescript2={setDescription}
+                                        />
+                                        {/* <MenuCard1 imgMenuCard1="/Assets/FoodImg/Liempo.png"  
                                         altMenuCard1="foodLiempo"
                                         MenuName1="Liempo"
                                         MenuDescript1="Liempo is marinated in a mixture of crushed garlic, vinegar, salt, and pepper before being grilled. It is then served with soy sauce and vinegar or vinegar with garlic."
@@ -68,8 +99,8 @@ export default function Home(){
                                         altMenuCard2="foodSisig"
                                         MenuName2="Sisig"
                                         MenuDescript2="Sisig is a dish made from pork jowl and ears, pork belly, and chicken liver, which is usually seasoned with calamansi, onions, and chili peppers. This dish is a staple of Kapampangan cuisine."
-                                        />
-                                    </div>
+                                        /> */}
+                                        </div>
                                     <img src="/Assets/Shapes/4Star.png" alt="4Star" class="Star4Elem"></img>
                                 </div>
                                 
@@ -77,26 +108,32 @@ export default function Home(){
                                     <img src="/Assets/Shapes/Diamond.png" alt="Diamond" class="Diamond"></img>
                                     
                                     <div class="MenuCont">
-                                        <MenuCard1 imgMenuCard1="/Assets/FoodImg/Tinolang-Manok.png"  
+                                        <MenuCard1 imgMenuCard1= {setImgSrc}
+                                        altMenuCard1={setImgAlt}
+                                        MenuName1={setName}
+                                        MenuDescript1={setDescription}
+                                        />
+
+                                        <MenuCard2 imgMenuCard2={setImgSrc}  
+                                        altMenuCard2={setImgAlt}
+                                        MenuName2={setName}
+                                        MenuDescript2={setDescription}
+                                        />
+                                        {/* <MenuCard1 imgMenuCard1="/Assets/FoodImg/Tinolang-Manok.png"  
                                         altMenuCard1="foodTinolangManok"
                                         MenuName1="Tinolang Manok"
                                         MenuDescript1="Tinolang Manok is a well-loved Filipino comfort food dish. It's a great tasting and healthy dish for you and your family."
                                         />
 
-                                        <MenuCard2 imgMenuCard2="/Assets/FoodImg/adobo.png"  
+                                        <MenuCard2 
+                                        id = ""
+                                        imgMenuCard2="/Assets/FoodImg/adobo.png"  
                                         altMenuCard2="foodAdobong Manok"
                                         MenuName2="Adobong Manok"
                                         MenuDescript2="Adobo is meat marinated in soy sauce and vinegar, one of Philippines' most popular dish and loved by many. Because Adobo recipes varies, this recipe includes garlic, potatoes, and black pepper."
-                                        />
-                                        {/* <div class="MenuContCard">
-                                            <div class="MenuTxt"><h2 class="Title">Adobong Manok</h2><p>Adobo is meat marinated in soy sauce and vinegar, one of Philippines' most popular dish and loved by many. Because Adobo recipes varies, this recipe includes garlic, potatoes, and black pepper.</p></div>
-                                            <img src="/Assets/FoodImg/adobo.png" alt="food" class="ImgMenu" id="ImgMenuRight"></img>
-                                        </div> */}
+                                        /> */}
                                     </div>
                                 </div>
-
-
-                                
                             </div>
 
                     <div class="ShapeSideMenu" id="ShapeSideR">
@@ -197,3 +234,5 @@ export default function Home(){
         </div>
     );
 }
+
+export default HomePage;

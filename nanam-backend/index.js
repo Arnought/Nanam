@@ -23,9 +23,18 @@ const userSchema = new mongoose.Schema({
   password: String,
 });
 
-
 const User = mongoose.model('User', userSchema);
 
+      //Menu
+const MenuItemSchema = new mongoose.Schema({ 
+  id: String,
+  imgSrc: String,
+  imgAlt: String,
+  name: String,
+  description: String,
+});
+
+const MenuItem = mongoose.model('MenuItem', MenuItemSchema);
 
 // Routes
 app.post('/login', async (req, res) => {
@@ -73,6 +82,54 @@ app.get('/users', async (req, res) => {
   }
 });
 
+          //MENU
+app.get('/home', async (req, res) => {
+  try {
+      const menuItems = await MenuItem.find();
+      res.json(menuItems);
+  } catch (error) {
+      console.error('Error fetching users:', error);
+      res.status(500).json({ error: 'Error in fetch menu items.' });
+  }
+});
+
+
+// Seed Initial Data
+app.get('/menuSeed', async (req, res) => {
+  const sampleMenu = [
+    {
+      imgSrc: "/Assets/FoodImg/Liempo.png",
+      imgAlt: "foodLiempo",
+      name: "Liempo",
+        description: "Liempo is marinated in a mixture of crushed garlic, vinegar, salt, and pepper before being grilled.",
+    },
+    {
+        imgSrc: "/Assets/FoodImg/Sisig.png",
+        imgAlt: "foodSisig",
+        name: "Sisig",
+        description: "Sisig is a dish made from pork jowl and ears, pork belly, and chicken liver, seasoned with calamansi, onions, and chili peppers.",
+    },
+    {
+        imgSrc: "/Assets/FoodImg/Tinolang-Manok.png",
+        imgAlt: "foodTinolangManok",
+        name: "Tinolang Manok",
+        description: "Tinolang Manok is a well-loved Filipino comfort food dish. It's a great tasting and healthy dish for you and your family.",
+    },
+    {
+        imgSrc: "/Assets/FoodImg/adobo.png" ,
+        imgAlt: "foodAdobong Manok",
+        name: "Adobong Manok",
+        description: "Adobo is meat marinated in soy sauce and vinegar, one of Philippines' most popular dish and loved by many. Because Adobo recipes varies, this recipe includes garlic, potatoes, and black pepper.",
+    }
+  ];
+
+  try {
+      await MenuItem.insertMany(sampleMenu);
+      res.status(201).send('Menu seeded!');
+  } catch (error) {
+      res.status(500).send('Error seeding data:', error);
+  }
+});
 
 
 app.listen(PORT, () => {
