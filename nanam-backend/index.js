@@ -35,8 +35,17 @@ const reservationSchema = new mongoose.Schema({
   name: String,
 });
 
+const MenuItemSchema = new mongoose.Schema({ 
+  id: String,
+  imgSrc: String,
+  imgAlt: String,
+  name: String,
+  description: String,
+});
+
 const User = mongoose.model('User', userSchema);
 const Reservation = mongoose.model('Reservation', reservationSchema);
+const MenuItem = mongoose.model('MenuItem', MenuItemSchema);
 
 // Routes
 // POSTS
