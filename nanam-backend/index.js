@@ -27,7 +27,16 @@ const userSchema = new mongoose.Schema({
   password: String,
 });
 
+const reservationSchema = new mongoose.Schema({
+  people: Number,
+  date: String,
+  time: String,
+  email: String,
+  name: String,
+});
+
 const User = mongoose.model('User', userSchema);
+const Reservation = mongoose.model('Reservation', reservationSchema);
 
       //Menu
 const MenuItemSchema = new mongoose.Schema({ 
