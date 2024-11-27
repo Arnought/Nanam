@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "6746e3777a53f24e75f8a4a6"
+  },
+  "imgSrc": "/Assets/FoodImg/Sisig.png",
+  "imgAlt": "foodSisig",
+  "name": "Sisig",
+  "description": "Sisig is a dish made from pork jowl and ears, pork belly, and chicken liver, seasoned with calamansi, onions, and chili peppers.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6746e3777a53f24e75f8a4a7"
+  },
+  "imgSrc": "/Assets/FoodImg/Tinolang-Manok.png",
+  "imgAlt": "foodTinolangManok",
+  "name": "Tinolang Manok",
+  "description": "Tinolang Manok is a well-loved Filipino comfort food dish. It's a great tasting and healthy dish for you and your family.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6746e3777a53f24e75f8a4a8"
+  },
+  "imgSrc": "/Assets/FoodImg/adobo.png",
+  "imgAlt": "foodAdobong Manok",
+  "name": "Adobong Manok",
+  "description": "Adobo is meat marinated in soy sauce and vinegar, one of Philippines' most popular dish and loved by many. Because Adobo recipes varies, this recipe includes garlic, potatoes, and black pepper.",
+  "__v": 0
+}]

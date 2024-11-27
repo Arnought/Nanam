@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "6746e3897a53f24e75f8a4af"
+  },
+  "people": 7,
+  "date": "2024-11-28T09:16:51.000Z",
+  "time": "9:00 AM",
+  "email": "test@example.com",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6746e3957a53f24e75f8a4b1"
+  },
+  "people": 5,
+  "date": "2024-11-28T09:16:57.000Z",
+  "time": "11:30 AM",
+  "email": "test@example.com",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6746e39f7a53f24e75f8a4b3"
+  },
+  "people": 3,
+  "date": "2024-11-28T09:17:09.000Z",
+  "time": "12:00 PM",
+  "email": "test@example.com",
+  "__v": 0
+}]
