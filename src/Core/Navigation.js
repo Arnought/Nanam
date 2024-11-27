@@ -45,19 +45,19 @@ const Navigation = () => {
 
     const closeReservationModal = () => setShowReservation(false);
 
-    // Function to handle user login
+    //user login
     const handleLogin = (user) => {
         setIsLoggedIn(true);
         setUserDetails(user);
-        localStorage.setItem('user', JSON.stringify(user)); // Store user data in localStorage
+        localStorage.setItem('user', JSON.stringify(user)); //user data in localStorage
         closeLoginModal();
     };
 
-    // Function to handle user logout
+    //user logout
     const handleLogout = () => {
         setIsLoggedIn(false);
         setUserDetails({ email: '', name: '' });
-        localStorage.removeItem('user'); // Clear session from localStorage
+        localStorage.removeItem('user'); // clear session
     };
 
     return (
