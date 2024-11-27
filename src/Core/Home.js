@@ -4,7 +4,9 @@ import "./HomeStyle.css";
 // import MenuCard1 from './MenuCard1.js';
 // import MenuCard2 from './MenuCard2.js';
 
-const HomePage = ({ MenuItem }) => {
+
+
+const HomePage = () => {
     const [menuItems, setMenuItems] = useState([]);
 // export default function Home(){
 
@@ -84,20 +86,21 @@ const HomePage = ({ MenuItem }) => {
                                 </div>
                             </div>
 
-                            <div class="DesMain" id="TopMenu1">
+
+                            <div className="DesMain" id="TopMenu1">
                                 <div className="MenuCont">
-                                    
-                                {menuItems.map((item) => (
-                                    <div key={item._id} className="MenuContCard">
-                                    <img src={item.imgSrc} alt={item.imgAlt} className="ImgMenu" />
-                                        <div className="MenuTxt">
-                                            <h2 className="Title">{item.name}</h2>
-                                            <p className="">{item.description}</p>
-                                        </div>
+                                    {menuItems.map((item, index) => (
+                                    <div key={item._id || index} className="MenuContCard">
+                                        <img src={item.imgSrc} alt={item.imgAlt} className="ImgMenu" />
+                                            <div className="MenuTxt">
+                                                <h2  className="Title">{item.name}</h2>
+                                                <p>{item.description}</p>
+                                            </div>
                                     </div>
-                                ))}
+                                    ))}
                                 </div>
                             </div>
+
 
                                     {/* <div class="DesMain" id="TopMenu1"> */}
                                         {/* <div class="MenuCont">

@@ -13,8 +13,12 @@ mongoose.connect('mongodb://localhost:27017/nanam', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
-  .then(() => console.log('Connected to MongoDB'))
-  .catch((err) => console.error('MongoDB connection error:', err));
+
+.then(() => {
+  console.log('Connected to MongoDB');
+  seedMenuItems(); // Auto-seed menu items on successful DB connection
+})
+.catch((err) => console.error('MongoDB connection error:', err));
 
 // Define Mongoose Schemas and Models
 const userSchema = new mongoose.Schema({
@@ -82,55 +86,87 @@ app.get('/users', async (req, res) => {
   }
 });
 
-          //MENU
-app.get('/home', async (req, res) => {
-  try {
-      const menuItems = await MenuItem.find();
-      res.json(menuItems);
-  } catch (error) {
-      console.error('Error fetching users:', error);
-      res.status(500).json({ error: 'Error in fetch menu items.' });
-  }
-});
+//MENU
 
+
+const seedMenuItems = async () => {
+  const sampleMenu = [
+    {
+      imgSrc: "/Assets/FoodImg/Liempo.png",
+      imgAlt: "foodLiempo",
+      name: "Liempo",
+      description: "Liempo is marinated in a mixture of crushed garlic, vinegar, salt, and pepper before being grilled.",
+    },
+    {
+      imgSrc: "/Assets/FoodImg/Sisig.png",
+      imgAlt: "foodSisig",
+      name: "Sisig",
+      description: "Sisig is a dish made from pork jowl and ears, pork belly, and chicken liver, seasoned with calamansi, onions, and chili peppers.",
+    },
+    {
+      imgSrc: "/Assets/FoodImg/Tinolang-Manok.png",
+      imgAlt: "foodTinolangManok",
+      name: "Tinolang Manok",
+      description: "Tinolang Manok is a well-loved Filipino comfort food dish. It's a great tasting and healthy dish for you and your family.",
+    },
+    {
+      imgSrc: "/Assets/FoodImg/adobo.png" ,
+      imgAlt: "foodAdobong Manok",
+      name: "Adobong Manok",
+      description: "Adobo is meat marinated in soy sauce and vinegar, one of Philippines' most popular dish and loved by many. Because Adobo recipes varies, this recipe includes garlic, potatoes, and black pepper.",
+    }
+  ];
+
+  try {
+    const existingItems = await MenuItem.find(); // Check if the collection is already seeded
+    if (existingItems.length === 0) {
+      await MenuItem.insertMany(sampleMenu);
+      console.log('Menu items seeded successfully!');
+    } else {
+      console.log('Menu items already exist. No seeding performed.');
+    }
+  } catch (error) {
+    console.error('Error seeding menu items:', error);
+  }
+};
 
 // Seed Initial Data
 // app.get('/menuSeed', async (req, res) => {
   // const sampleMenu = [
-const menuSeed = async () =>
-{
-  [
-    {
-        imgSrc: "/Assets/FoodImg/Liempo.png",
-        imgAlt: "foodLiempo",
-        name: "Liempo",
-        description: "Liempo is marinated in a mixture of crushed garlic, vinegar, salt, and pepper before being grilled.",
-    },
-    {
-        imgSrc: "/Assets/FoodImg/Sisig.png",
-        imgAlt: "foodSisig",
-        name: "Sisig",
-        description: "Sisig is a dish made from pork jowl and ears, pork belly, and chicken liver, seasoned with calamansi, onions, and chili peppers.",
-    },
-    {
-        imgSrc: "/Assets/FoodImg/Tinolang-Manok.png",
-        imgAlt: "foodTinolangManok",
-        name: "Tinolang Manok",
-        description: "Tinolang Manok is a well-loved Filipino comfort food dish. It's a great tasting and healthy dish for you and your family.",
-    },
-    {
-        imgSrc: "/Assets/FoodImg/adobo.png" ,
-        imgAlt: "foodAdobong Manok",
-        name: "Adobong Manok",
-        description: "Adobo is meat marinated in soy sauce and vinegar, one of Philippines' most popular dish and loved by many. Because Adobo recipes varies, this recipe includes garlic, potatoes, and black pepper.",
-    }
-  ]
+// const menuSeed = async () =>
+// {
+//   [
+//     {
+//         imgSrc: "/Assets/FoodImg/Liempo.png",
+//         imgAlt: "foodLiempo",
+//         name: "Liempo",
+//         description: "Liempo is marinated in a mixture of crushed garlic, vinegar, salt, and pepper before being grilled.",
+//     },
+//     {
+//         imgSrc: "/Assets/FoodImg/Sisig.png",
+//         imgAlt: "foodSisig",
+//         name: "Sisig",
+//         description: "Sisig is a dish made from pork jowl and ears, pork belly, and chicken liver, seasoned with calamansi, onions, and chili peppers.",
+//     },
+//     {
+//         imgSrc: "/Assets/FoodImg/Tinolang-Manok.png",
+//         imgAlt: "foodTinolangManok",
+//         name: "Tinolang Manok",
+//         description: "Tinolang Manok is a well-loved Filipino comfort food dish. It's a great tasting and healthy dish for you and your family.",
+//     },
+//     {
+//         imgSrc: "/Assets/FoodImg/adobo.png" ,
+//         imgAlt: "foodAdobong Manok",
+//         name: "Adobong Manok",
+//         description: "Adobo is meat marinated in soy sauce and vinegar, one of Philippines' most popular dish and loved by many. Because Adobo recipes varies, this recipe includes garlic, potatoes, and black pepper.",
+//     }
+//   ]
 
-  .then(() => console.log('Connected to MongoDB'))
-  .catch((err) => console.error('MongoDB connection error:', err));
-};
+//   .then(() => console.log('Connected to MongoDB'))
+//   .catch((err) => console.error('MongoDB connection error:', err));
+// };
 
-MenuItem.insertMany(menuSeed);
+// MenuItem.insertMany(menuSeed);
 
 
   // try {
@@ -141,6 +177,15 @@ MenuItem.insertMany(menuSeed);
   // }
 
 
+  app.get('/home', async (req, res) => {
+    try {
+        const menuItems = await MenuItem.find();
+        res.json(menuItems);
+    } catch (error) {
+        console.error('Error fetching users:', error);
+        res.status(500).json({ error: 'Error in fetch menu items.' });
+    }
+  });
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
