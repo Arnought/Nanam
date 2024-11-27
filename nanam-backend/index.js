@@ -95,12 +95,15 @@ app.get('/home', async (req, res) => {
 
 
 // Seed Initial Data
-app.get('/menuSeed', async (req, res) => {
-  const sampleMenu = [
+// app.get('/menuSeed', async (req, res) => {
+  // const sampleMenu = [
+const menuSeed = async () =>
+{
+  [
     {
-      imgSrc: "/Assets/FoodImg/Liempo.png",
-      imgAlt: "foodLiempo",
-      name: "Liempo",
+        imgSrc: "/Assets/FoodImg/Liempo.png",
+        imgAlt: "foodLiempo",
+        name: "Liempo",
         description: "Liempo is marinated in a mixture of crushed garlic, vinegar, salt, and pepper before being grilled.",
     },
     {
@@ -121,15 +124,22 @@ app.get('/menuSeed', async (req, res) => {
         name: "Adobong Manok",
         description: "Adobo is meat marinated in soy sauce and vinegar, one of Philippines' most popular dish and loved by many. Because Adobo recipes varies, this recipe includes garlic, potatoes, and black pepper.",
     }
-  ];
+  ]
 
-  try {
-      await MenuItem.insertMany(sampleMenu);
-      res.status(201).send('Menu seeded!');
-  } catch (error) {
-      res.status(500).send('Error seeding data:', error);
-  }
-});
+  .then(() => console.log('Connected to MongoDB'))
+  .catch((err) => console.error('MongoDB connection error:', err));
+};
+
+MenuItem.insertMany(menuSeed);
+
+
+  // try {
+  //     await MenuItem.insertMany(sampleMenu);
+  //     res.status(201).send('Menu seeded!');
+  // } catch (error) {
+  //     res.status(500).send('Error seeding data:', error);
+  // }
+
 
 
 app.listen(PORT, () => {

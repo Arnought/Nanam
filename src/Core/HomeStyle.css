@@ -164,8 +164,9 @@ ul {
 }
 
 .InfoTxt{
+  /* text-align: justify; */
   padding:50px;
-  padding-top:70px;
+  padding-top:20px;
   padding-bottom:70px;
   color: #fffef9;
 }

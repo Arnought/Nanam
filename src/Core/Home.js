@@ -6,7 +6,8 @@ import "./HomeStyle.css";
 
 const HomePage = ({ MenuItem }) => {
     const [menuItems, setMenuItems] = useState([]);
-// // export default function Home(){
+// export default function Home(){
+
     useEffect(() => {
         const fetchMenuItems = async () => {
           try {
@@ -20,19 +21,19 @@ const HomePage = ({ MenuItem }) => {
     
         fetchMenuItems();
       }, []);
-    
-//     const [imgSrc, setImgSrc] = useState('');
-//     const [imgAlt, setImgAlt] = useState('');
-//     const [name, setName] = useState('');
-//     const [description, setDescription] = useState('');
 
-//     fetch('http://localhost:5000/home', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify({ imgSrc, imgAlt, name, description }),
-//       })
+    // const [imgSrc, setImgSrc] = useState('');
+    // const [imgAlt, setImgAlt] = useState('');
+    // const [name, setName] = useState('');
+    // const [description, setDescription] = useState('');
+
+    // fetch('http://localhost:5000/home', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify({ imgSrc, imgAlt, name, description }),
+    //   })
  
     return (
         <div>
@@ -82,8 +83,10 @@ const HomePage = ({ MenuItem }) => {
                                 <h1 class="BaybayinTitle" id="BaybayinTitleMenu">Pagpipilian</h1>
                                 </div>
                             </div>
+
                             <div class="DesMain" id="TopMenu1">
                                 <div className="MenuCont">
+                                    
                                 {menuItems.map((item) => (
                                     <div key={item._id} className="MenuContCard">
                                     <img src={item.imgSrc} alt={item.imgAlt} className="ImgMenu" />
@@ -96,7 +99,6 @@ const HomePage = ({ MenuItem }) => {
                                 </div>
                             </div>
 
-                                    
                                     {/* <div class="DesMain" id="TopMenu1"> */}
                                         {/* <div class="MenuCont">
                                         <MenuCard1 imgMenuCard1= {setImgSrc}
@@ -110,6 +112,7 @@ const HomePage = ({ MenuItem }) => {
                                         MenuName2={setName}
                                         MenuDescript2={setDescription}
                                         /> */}
+
                                         {/* <MenuCard1 imgMenuCard1="/Assets/FoodImg/Liempo.png"  
                                         altMenuCard1="foodLiempo"
                                         MenuName1="Liempo"
@@ -123,12 +126,12 @@ const HomePage = ({ MenuItem }) => {
                                         /> */}
                                         {/* </div> */}
                                     {/* <img src="/Assets/Shapes/4Star.png" alt="4Star" class="Star4Elem"></img>
-                                </div>
-                                
-                                <div class="DesMain" id="TopMenu2">
+                                    </div>
+
+                                    <div class="DesMain" id="TopMenu2">
                                     <img src="/Assets/Shapes/Diamond.png" alt="Diamond" class="Diamond"></img>
                                     
-                                    <div class="MenuCont"> */}
+                                        <div class="MenuCont"> */}
                                         {/* <MenuCard1 imgMenuCard1= {setImgSrc}
                                         altMenuCard1={setImgAlt}
                                         MenuName1={setName}
