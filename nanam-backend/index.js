@@ -38,17 +38,6 @@ const reservationSchema = new mongoose.Schema({
 const User = mongoose.model('User', userSchema);
 const Reservation = mongoose.model('Reservation', reservationSchema);
 
-      //Menu
-const MenuItemSchema = new mongoose.Schema({ 
-  id: String,
-  imgSrc: String,
-  imgAlt: String,
-  name: String,
-  description: String,
-});
-
-const MenuItem = mongoose.model('MenuItem', MenuItemSchema);
-
 // Routes
 // POSTS
 app.post('/login', async (req, res) => {
@@ -108,8 +97,15 @@ app.get('/users', async (req, res) => {
   }
 });
 
-//MENU
-
+app.get('/reservation', async (req, res) => {
+  try {
+    const reservations = await Reservation.find();
+    res.json(reservations);
+  } catch (error) {
+    console.error('Error fetching reservations:', error);
+    res.status(500).json({ message: 'An error occurred' });
+  }
+});
 
 const seedMenuItems = async () => {
   const sampleMenu = [
