@@ -35,6 +35,12 @@ const About = () => {
 
                     <div id="profile">
                     <ProfileCard img="/Assets/pfp.png"
+                    alt="Carl"
+                    name="Carl Alec Gutierrez" />
+                    </div>
+
+                    <div id="profile">
+                    <ProfileCard img="/Assets/pfp.png"
                     alt="Khristine"
                     name="Khristine Khyle Isidro" />
                     </div>
